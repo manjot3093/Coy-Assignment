@@ -115,19 +115,46 @@ export const MatchesView: React.FC<MatchesViewProps> = ({
                   key={`avatar-${match.id}`}
                   onClick={() => handleOpenChat(match.profile)}
                   className="flex flex-col items-center gap-1.5 cursor-pointer shrink-0 group"
+                  style={{ width: '72px' }}
                 >
-                  {/* Avatar ring with strict bounded dimensions */}
-                  <div className="w-18 h-18 rounded-full p-1 bg-[#FF2E75] border-2 border-black coy-shadow-sm flex items-center justify-center group-hover:scale-105 transition-transform shrink-0">
-                    <div className="w-15 h-15 rounded-full overflow-hidden border border-white bg-neutral-100 shrink-0">
+                  {/* Outer pink ring strictly locked to 68px */}
+                  <div
+                    style={{
+                      width: '68px',
+                      height: '68px',
+                      minWidth: '68px',
+                      minHeight: '68px',
+                      maxWidth: '68px',
+                      maxHeight: '68px',
+                    }}
+                    className="rounded-full p-1 bg-[#FF2E75] border-2 border-black coy-shadow-sm flex items-center justify-center group-hover:scale-105 transition-transform shrink-0 overflow-hidden"
+                  >
+                    {/* Inner circular clipping mask locked to 58px */}
+                    <div
+                      style={{
+                        width: '58px',
+                        height: '58px',
+                        minWidth: '58px',
+                        minHeight: '58px',
+                        maxWidth: '58px',
+                        maxHeight: '58px',
+                      }}
+                      className="rounded-full overflow-hidden border border-white bg-neutral-100 shrink-0 relative"
+                    >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={match.profile.photo}
                         alt={match.profile.name}
-                        className="w-full h-full object-cover shrink-0"
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          display: 'block',
+                        }}
                       />
                     </div>
                   </div>
-                  <span className="text-[11px] font-bold text-neutral-800 group-hover:text-[#FF2E75] truncate max-w-[70px]">
+                  <span className="text-[11px] font-bold text-neutral-800 group-hover:text-[#FF2E75] truncate max-w-[68px] text-center">
                     {match.profile.name.split(' ')[0]}
                   </span>
                 </div>
@@ -151,12 +178,28 @@ export const MatchesView: React.FC<MatchesViewProps> = ({
                     onClick={() => handleOpenChat(match.profile)}
                     className="p-3 rounded-2xl bg-white border-2 border-black/80 hover:border-black hover:coy-shadow-sm transition-all cursor-pointer flex items-center gap-3.5 group shadow-xs"
                   >
-                    <div className="w-12 h-12 rounded-xl overflow-hidden border border-neutral-300 shrink-0">
+                    <div
+                      style={{
+                        width: '48px',
+                        height: '48px',
+                        minWidth: '48px',
+                        minHeight: '48px',
+                        maxWidth: '48px',
+                        maxHeight: '48px',
+                      }}
+                      className="rounded-xl overflow-hidden border border-neutral-300 shrink-0"
+                    >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={match.profile.photo}
                         alt={match.profile.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          display: 'block',
+                        }}
+                        className="group-hover:scale-105 transition-transform"
                       />
                     </div>
 
@@ -200,12 +243,25 @@ export const MatchesView: React.FC<MatchesViewProps> = ({
             {/* Chat Header */}
             <div className="p-3.5 px-4 bg-white border-b border-neutral-200 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#FF2E75] shrink-0">
+                <div
+                  style={{
+                    width: '40px',
+                    height: '40px',
+                    minWidth: '40px',
+                    minHeight: '40px',
+                  }}
+                  className="rounded-full overflow-hidden border-2 border-[#FF2E75] shrink-0"
+                >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={activeChatProfile.photo}
                     alt={activeChatProfile.name}
-                    className="w-full h-full object-cover"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      display: 'block',
+                    }}
                   />
                 </div>
                 <div>
