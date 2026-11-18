@@ -5,7 +5,12 @@
       "name": "Aanya Sharma",
       "age": 21,
       "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
-      "bio": "Obsessed with specialty coffee, architectural history, and film cameras. Probably reading Murakami at a quiet café.",
+      "photos": [
+        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80"
+      ],
+      "bio": "Obsessed with specialty pour-overs, brutalist architecture, and 35mm film cameras. Probably reading Murakami at a quiet café in Majnu Ka Tila.",
       "collegeOrCity": "Delhi University, North Campus",
       "interests": [
         "Film Photography",
@@ -13,15 +18,29 @@
         "Specialty Coffee",
         "Literature"
       ],
-      "occupation": "Literature Major & Freelance Writer",
-      "distance": "3 km away"
+      "occupation": "Literature Major & Editorial Intern",
+      "distance": "3 km away",
+      "pronouns": "she/her",
+      "verified": true,
+      "promptQuestion": "Best way to ask me out",
+      "promptAnswer": "Take me to an obscure used bookstore and let me buy you an iced flat white.",
+      "lifestyle": {
+        "drinking": "Socially",
+        "zodiac": "Taurus",
+        "pets": "Cat lover"
+      }
     },
     {
       "id": "coy_02",
       "name": "Rhea Sen",
       "age": 22,
       "photo": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
-      "bio": "Building aesthetic web apps by day, playing indie folk chords by night. Tell me your favorite hidden food spot!",
+      "photos": [
+        "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
+      ],
+      "bio": "Building aesthetic web interfaces by day, playing indie acoustic riffs by night. Let's find the best butter chicken in South Delhi.",
       "collegeOrCity": "IIT Delhi / South Ext.",
       "interests": [
         "Acoustic Guitar",
@@ -29,15 +48,28 @@
         "Baking",
         "Thrifting"
       ],
-      "occupation": "Design Engineer",
-      "distance": "5 km away"
+      "occupation": "Product Design Fellow",
+      "distance": "5 km away",
+      "pronouns": "she/her",
+      "verified": true,
+      "promptQuestion": "The key to my heart is",
+      "promptAnswer": "Sharing your most unhinged Spotify playlist with zero embarrassment.",
+      "lifestyle": {
+        "drinking": "Rarely",
+        "zodiac": "Libra",
+        "pets": "Dog person"
+      }
     },
     {
       "id": "coy_03",
       "name": "Devika Rao",
       "age": 23,
       "photo": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
-      "bio": "Law school survivor. Passionate about civil liberties, vinyl records, and hiking in Himachal during monsoon.",
+      "photos": [
+        "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80"
+      ],
+      "bio": "Law school survivor. Passionate about civil liberties, vinyl record pressing, and spontaneous weekend treks in Himachal.",
       "collegeOrCity": "National Law University, Delhi",
       "interests": [
         "Debate",
@@ -46,14 +78,26 @@
         "Podcasts"
       ],
       "occupation": "Legal Analyst",
-      "distance": "7 km away"
+      "distance": "7 km away",
+      "pronouns": "she/her",
+      "verified": true,
+      "promptQuestion": "A non-negotiable for me",
+      "promptAnswer": "Being kind to service staff and appreciating good humor.",
+      "lifestyle": {
+        "drinking": "Socially",
+        "zodiac": "Scorpio"
+      }
     },
     {
       "id": "coy_04",
       "name": "Karan Malhotra",
       "age": 22,
       "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80",
-      "bio": "Formula 1 nerd (Ferrari heartbreak), weekend marathon runner, and amateur sourdough baker.",
+      "photos": [
+        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80"
+      ],
+      "bio": "Formula 1 enthusiast (enduring Ferrari pain every Sunday), amateur half-marathoner, and sourdough baker.",
       "collegeOrCity": "BITS Pilani / Gurgaon",
       "interests": [
         "Formula 1",
@@ -62,14 +106,26 @@
         "Sci-Fi"
       ],
       "occupation": "Fintech Analyst",
-      "distance": "12 km away"
+      "distance": "12 km away",
+      "pronouns": "he/him",
+      "verified": true,
+      "promptQuestion": "I geek out on",
+      "promptAnswer": "Telemetry graphs in motorsport and mechanical espresso machines.",
+      "lifestyle": {
+        "drinking": "Socially",
+        "zodiac": "Aries"
+      }
     },
     {
       "id": "coy_05",
       "name": "Meera Kapoor",
       "age": 21,
       "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80",
-      "bio": "Aspiring documentary filmmaker. Let's debate A24 cinema and exchange Spotify playlists that feel like rainy evenings.",
+      "photos": [
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
+      ],
+      "bio": "Documentary filmmaking student. Let's debate A24 cinema, watch sunsets from Humayun's Tomb, and trade songs that feel like monsoons.",
       "collegeOrCity": "Lady Shri Ram College",
       "interests": [
         "Cinematography",
@@ -77,8 +133,16 @@
         "Spotify Curating",
         "Art Galleries"
       ],
-      "occupation": "Film Studies Student",
-      "distance": "4 km away"
+      "occupation": "Film Studies Major",
+      "distance": "4 km away",
+      "pronouns": "she/her",
+      "verified": true,
+      "promptQuestion": "My simple pleasures",
+      "promptAnswer": "Cold rain, warm chai, and 70s rock blaring from old speakers.",
+      "lifestyle": {
+        "drinking": "Never",
+        "zodiac": "Cancer"
+      }
     },
     {
       "id": "coy_06",
@@ -94,7 +158,8 @@
         "Craft Beer"
       ],
       "occupation": "Software Engineer",
-      "distance": "8 km away"
+      "distance": "8 km away",
+      "verified": true
     },
     {
       "id": "coy_07",
@@ -110,7 +175,8 @@
         "Pottery"
       ],
       "occupation": "Product Designer",
-      "distance": "6 km away"
+      "distance": "6 km away",
+      "verified": true
     },
     {
       "id": "coy_08",
@@ -126,7 +192,8 @@
         "Boba Tea"
       ],
       "occupation": "Psychology & Neuro Student",
-      "distance": "15 km away"
+      "distance": "15 km away",
+      "verified": true
     },
     {
       "id": "coy_09",
@@ -141,8 +208,9 @@
         "Concerts",
         "Street Food"
       ],
-      "occupation": "Music Producer & Sound Designer",
-      "distance": "9 km away"
+      "occupation": "Sound Designer",
+      "distance": "9 km away",
+      "verified": true
     },
     {
       "id": "coy_10",
@@ -158,7 +226,8 @@
         "Yoga"
       ],
       "occupation": "Sustainability Consultant",
-      "distance": "11 km away"
+      "distance": "11 km away",
+      "verified": true
     },
     {
       "id": "coy_11",
@@ -174,7 +243,8 @@
         "Travel"
       ],
       "occupation": "Brand Strategist",
-      "distance": "14 km away"
+      "distance": "14 km away",
+      "verified": true
     },
     {
       "id": "coy_12",
@@ -190,7 +260,8 @@
         "Sci-Fi Movies"
       ],
       "occupation": "Physics Researcher",
-      "distance": "10 km away"
+      "distance": "10 km away",
+      "verified": true
     },
     {
       "id": "coy_13",
@@ -206,7 +277,8 @@
         "Design"
       ],
       "occupation": "Associate PM",
-      "distance": "13 km away"
+      "distance": "13 km away",
+      "verified": true
     },
     {
       "id": "coy_14",
@@ -222,7 +294,8 @@
         "Watercolor"
       ],
       "occupation": "Visual Illustrator",
-      "distance": "5 km away"
+      "distance": "5 km away",
+      "verified": true
     },
     {
       "id": "coy_15",
@@ -238,7 +311,8 @@
         "Podcasts"
       ],
       "occupation": "Frontend Engineer",
-      "distance": "7 km away"
+      "distance": "7 km away",
+      "verified": true
     },
     {
       "id": "coy_16",
@@ -254,7 +328,8 @@
         "Creative Writing"
       ],
       "occupation": "Urban Design Researcher",
-      "distance": "18 km away"
+      "distance": "18 km away",
+      "verified": true
     },
     {
       "id": "coy_17",
@@ -270,7 +345,8 @@
         "Coffee"
       ],
       "occupation": "Junior Architect",
-      "distance": "16 km away"
+      "distance": "16 km away",
+      "verified": true
     },
     {
       "id": "coy_18",
@@ -286,7 +362,8 @@
         "Badminton"
       ],
       "occupation": "Data Scientist",
-      "distance": "6 km away"
+      "distance": "6 km away",
+      "verified": true
     },
     {
       "id": "coy_19",
@@ -302,7 +379,8 @@
         "Anime"
       ],
       "occupation": "Hardware Specialist",
-      "distance": "9 km away"
+      "distance": "9 km away",
+      "verified": true
     },
     {
       "id": "coy_20",
@@ -318,7 +396,8 @@
         "Tea"
       ],
       "occupation": "History Honors Student",
-      "distance": "4 km away"
+      "distance": "4 km away",
+      "verified": true
     },
     {
       "id": "coy_21",
@@ -334,7 +413,8 @@
         "Cryptic Crosswords"
       ],
       "occupation": "Founder & Developer",
-      "distance": "11 km away"
+      "distance": "11 km away",
+      "verified": true
     },
     {
       "id": "coy_22",
@@ -350,7 +430,8 @@
         "Photography"
       ],
       "occupation": "Fashion Merchandiser",
-      "distance": "8 km away"
+      "distance": "8 km away",
+      "verified": true
     },
     {
       "id": "coy_23",
@@ -366,7 +447,8 @@
         "Live Gigs"
       ],
       "occupation": "Business Development",
-      "distance": "14 km away"
+      "distance": "14 km away",
+      "verified": true
     },
     {
       "id": "coy_24",
@@ -382,7 +464,8 @@
         "Modern Art"
       ],
       "occupation": "Graphic Designer",
-      "distance": "10 km away"
+      "distance": "10 km away",
+      "verified": true
     },
     {
       "id": "coy_25",
@@ -398,7 +481,8 @@
         "Reading"
       ],
       "occupation": "Venture Associate",
-      "distance": "12 km away"
+      "distance": "12 km away",
+      "verified": true
     },
     {
       "id": "coy_26",
@@ -414,7 +498,8 @@
         "Filter Coffee"
       ],
       "occupation": "Content Producer",
-      "distance": "7 km away"
+      "distance": "7 km away",
+      "verified": true
     },
     {
       "id": "coy_27",
@@ -430,7 +515,8 @@
         "Chess"
       ],
       "occupation": "Quant Analyst",
-      "distance": "15 km away"
+      "distance": "15 km away",
+      "verified": true
     },
     {
       "id": "coy_28",
@@ -446,7 +532,8 @@
         "Baking"
       ],
       "occupation": "Research Assistant",
-      "distance": "6 km away"
+      "distance": "6 km away",
+      "verified": true
     },
     {
       "id": "coy_29",
@@ -462,7 +549,8 @@
         "Indie Music"
       ],
       "occupation": "Software Engineer",
-      "distance": "3 km away"
+      "distance": "3 km away",
+      "verified": true
     },
     {
       "id": "coy_30",
@@ -478,7 +566,8 @@
         "Street Photography"
       ],
       "occupation": "Cultural Journalist",
-      "distance": "9 km away"
+      "distance": "9 km away",
+      "verified": true
     },
     {
       "id": "coy_31",
@@ -494,7 +583,8 @@
         "Nutrition"
       ],
       "occupation": "Backend Architect",
-      "distance": "14 km away"
+      "distance": "14 km away",
+      "verified": true
     },
     {
       "id": "coy_32",
@@ -510,7 +600,8 @@
         "Economics"
       ],
       "occupation": "Economics Major",
-      "distance": "5 km away"
+      "distance": "5 km away",
+      "verified": true
     }
   ],
   "preLikedProfileIds": [

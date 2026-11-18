@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import { X, Heart, RotateCcw, Sparkles, Keyboard, Loader2 } from 'lucide-react';
+import { X, Heart, SlidersHorizontal, Sparkles, Keyboard, Loader2, RotateCcw, ShieldCheck } from 'lucide-react';
 import { Profile, SwipeAction } from '@/lib/types';
+import { sound } from '@/lib/sound';
 import { SwipeCard } from './SwipeCard';
 import { EmptyFeed } from './EmptyFeed';
 
@@ -22,6 +23,7 @@ export const DiscoverTab: React.FC<DiscoverTabProps> = ({
   const [loading, setLoading] = useState(true);
   const [swiping, setSwiping] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [showFilters, setShowFilters] = useState(false);
 
   // Fetch unswiped profiles
   const fetchFeed = useCallback(async () => {
@@ -46,7 +48,7 @@ export const DiscoverTab: React.FC<DiscoverTabProps> = ({
     fetchFeed();
   }, [fetchFeed]);
 
-  // Handle Swipe (Like or Pass)
+  // Handle Swipe
   const handleSwipe = useCallback(
     async (action: SwipeAction) => {
       if (profiles.length === 0 || swiping) return;
@@ -54,7 +56,13 @@ export const DiscoverTab: React.FC<DiscoverTabProps> = ({
       const currentProfile = profiles[0];
       setSwiping(true);
 
-      // Optimistically remove card from top of stack for instant responsiveness
+      // Play soft tactile sound & haptic vibration
+      sound.playSwipe(action);
+      if (typeof navigator !== 'undefined' && navigator.vibrate) {
+        navigator.vibrate(15);
+      }
+
+      // Optimistically remove card
       setProfiles((prev) => prev.slice(1));
 
       try {
@@ -70,7 +78,7 @@ export const DiscoverTab: React.FC<DiscoverTabProps> = ({
         const data = await res.json();
 
         if (data.success && data.match && data.profile) {
-          // Trigger match modal callback!
+          sound.playMatchChime();
           onMatch(data.profile);
         }
       } catch (err) {
@@ -82,7 +90,7 @@ export const DiscoverTab: React.FC<DiscoverTabProps> = ({
     [profiles, swiping, onMatch]
   );
 
-  // Keyboard accessibility listeners (Left Arrow = Pass, Right Arrow = Like)
+  // Keyboard accessibility listeners (Left = Pass, Right = Like)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (profiles.length === 0 || swiping) return;
@@ -103,10 +111,12 @@ export const DiscoverTab: React.FC<DiscoverTabProps> = ({
   const handleReset = async () => {
     try {
       setLoading(true);
+      sound.playPop();
       const res = await fetch('/api/reset', { method: 'POST' });
       const data = await res.json();
       if (data.success) {
         await fetchFeed();
+        setShowFilters(false);
       }
     } catch (err) {
       console.error('Error resetting feed:', err);
@@ -116,42 +126,47 @@ export const DiscoverTab: React.FC<DiscoverTabProps> = ({
   };
 
   return (
-    <div className="flex-1 flex flex-col items-center justify-between p-4 pb-24 w-full">
-      {/* Top Status Bar */}
+    <div className="flex-1 flex flex-col items-center justify-between p-4 pb-24 w-full select-none">
+      {/* Top Status Bar with Filter Toggle */}
       <div className="w-full flex items-center justify-between mb-3 px-1 text-xs text-neutral-400">
-        <div className="flex items-center gap-1.5 font-medium">
-          <Sparkles className="w-3.5 h-3.5 text-pink-500" />
-          <span>
-            {profiles.length > 0
-              ? `${profiles.length} profiles to explore`
-              : 'Feed completed'}
-          </span>
+        <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 font-medium text-neutral-300">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span>
+              {profiles.length > 0
+                ? `${profiles.length} nearby`
+                : 'Discovery complete'}
+            </span>
+          </div>
         </div>
 
         <button
-          onClick={handleReset}
-          className="flex items-center gap-1 hover:text-white transition-colors text-[11px] px-2 py-1 rounded-md bg-neutral-900 border border-neutral-800"
-          title="Reset 32 seed profiles for demo"
+          onClick={() => {
+            sound.playPop();
+            setShowFilters(true);
+          }}
+          className="p-1.5 rounded-full bg-neutral-900/90 border border-neutral-800 text-neutral-400 hover:text-white transition-colors"
+          title="Preferences & Reset"
+          aria-label="Discovery Preferences"
         >
-          <RotateCcw className="w-3 h-3" />
-          <span>Reset Feed</span>
+          <SlidersHorizontal className="w-3.5 h-3.5" />
         </button>
       </div>
 
       {/* Main Card Deck Area */}
-      <div className="relative w-full max-w-sm h-[540px] flex items-center justify-center">
+      <div className="relative w-full max-w-sm h-[550px] flex items-center justify-center">
         {loading ? (
           <div className="flex flex-col items-center justify-center gap-3 text-neutral-400">
             <Loader2 className="w-8 h-8 animate-spin text-pink-500" />
-            <p className="text-xs">Finding matches near you...</p>
+            <p className="text-xs">Finding people near your university...</p>
           </div>
         ) : error ? (
-          <div className="p-6 rounded-2xl bg-rose-950/40 border border-rose-800/60 text-center text-xs text-rose-300">
-            <p className="font-semibold mb-2">Error loading feed</p>
-            <p className="mb-4">{error}</p>
+          <div className="p-6 rounded-3xl bg-neutral-900 border border-rose-900/60 text-center text-xs text-rose-300">
+            <p className="font-semibold mb-2">Error loading discovery</p>
+            <p className="mb-4 text-neutral-400">{error}</p>
             <button
               onClick={fetchFeed}
-              className="px-4 py-2 rounded-full bg-rose-600 text-white font-medium"
+              className="px-4 py-2 rounded-full bg-pink-500 text-white font-medium"
             >
               Retry
             </button>
@@ -164,7 +179,7 @@ export const DiscoverTab: React.FC<DiscoverTabProps> = ({
           />
         ) : (
           <AnimatePresence>
-            {/* Render 2nd card in background for tactile depth */}
+            {/* Background Preview Card for Depth */}
             {profiles.length > 1 && (
               <SwipeCard
                 key={profiles[1].id}
@@ -174,7 +189,7 @@ export const DiscoverTab: React.FC<DiscoverTabProps> = ({
               />
             )}
 
-            {/* Front Card with active drag and gesture handling */}
+            {/* Top Interactive Front Card */}
             {profiles.length > 0 && (
               <SwipeCard
                 key={profiles[0].id}
@@ -190,7 +205,7 @@ export const DiscoverTab: React.FC<DiscoverTabProps> = ({
       {/* Desktop / Manual Action Buttons (Pass & Like) */}
       {profiles.length > 0 && !loading && (
         <div className="w-full max-w-xs flex flex-col items-center gap-2 mt-4">
-          <div className="flex items-center justify-center gap-6">
+          <div className="flex items-center justify-center gap-8">
             {/* Pass Button */}
             <button
               onClick={() => handleSwipe('pass')}
@@ -215,9 +230,59 @@ export const DiscoverTab: React.FC<DiscoverTabProps> = ({
           </div>
 
           {/* Desktop Keyboard Helper Hint */}
-          <div className="hidden sm:flex items-center gap-1.5 text-[11px] text-neutral-400 mt-1">
+          <div className="hidden sm:flex items-center gap-1.5 text-[11px] text-neutral-400 mt-0.5">
             <Keyboard className="w-3.5 h-3.5" />
             <span>Use Left / Right arrow keys to swipe</span>
+          </div>
+        </div>
+      )}
+
+      {/* Preferences & Reset Drawer Modal */}
+      {showFilters && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fadeIn">
+          <div className="w-full max-w-sm rounded-3xl bg-neutral-900 border border-neutral-800 p-6 shadow-2xl space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-neutral-800">
+              <h3 className="text-base font-bold text-white">Discovery Settings</h3>
+              <button
+                onClick={() => setShowFilters(false)}
+                className="p-1.5 rounded-full bg-neutral-800 text-neutral-400 hover:text-white"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            <div className="space-y-3 text-xs">
+              <div className="flex items-center justify-between">
+                <span className="text-neutral-300">Distance Radius</span>
+                <span className="font-semibold text-pink-400">Within 25 km</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-neutral-300">Age Range</span>
+                <span className="font-semibold text-pink-400">19 – 25</span>
+              </div>
+              <div className="p-3 rounded-2xl bg-neutral-950/80 border border-neutral-800 flex items-start gap-2.5 text-neutral-400 text-[11px]">
+                <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <span>
+                  Double-blind guarantee active. Profiles will never know you swiped on them unless mutual.
+                </span>
+              </div>
+            </div>
+
+            <div className="pt-2 flex flex-col gap-2">
+              <button
+                onClick={handleReset}
+                className="w-full py-2.5 rounded-2xl bg-neutral-800 hover:bg-neutral-700 text-neutral-200 text-xs font-semibold flex items-center justify-center gap-2 transition-colors"
+              >
+                <RotateCcw className="w-3.5 h-3.5" />
+                Reset Discovery History (32 Profiles)
+              </button>
+              <button
+                onClick={() => setShowFilters(false)}
+                className="w-full py-2.5 rounded-2xl bg-gradient-to-r from-pink-500 to-rose-600 text-white text-xs font-semibold"
+              >
+                Save & Close
+              </button>
+            </div>
           </div>
         </div>
       )}

@@ -3,11 +3,22 @@ export interface Profile {
   name: string;
   age: number;
   photo: string;
+  photos?: string[];
   bio: string;
   collegeOrCity: string;
   interests: string[];
   occupation?: string;
   distance?: string;
+  pronouns?: string;
+  verified?: boolean;
+  promptQuestion?: string;
+  promptAnswer?: string;
+  lifestyle?: {
+    drinking?: string;
+    smoking?: string;
+    zodiac?: string;
+    pets?: string;
+  };
 }
 
 export type SwipeAction = 'like' | 'pass';
@@ -26,6 +37,8 @@ export interface MatchRecord {
   profileId: string;
   matchedAt: string;
   profile: Profile;
+  lastMessage?: string;
+  unread?: boolean;
 }
 
 export interface DatabaseSchema {

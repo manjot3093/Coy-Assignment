@@ -41,7 +41,7 @@ export const EmptyFeed: React.FC<EmptyFeedProps> = ({
           className="w-full py-3 rounded-full bg-neutral-800 hover:bg-neutral-700 text-neutral-200 font-semibold text-xs border border-neutral-700 flex items-center justify-center gap-2 transition-all active:scale-95"
         >
           <RotateCcw className="w-4 h-4 text-neutral-400" />
-          Reset Demo Profiles (32 Seeded)
+          Reset Discovery Deck
         </button>
       </div>
     </div>

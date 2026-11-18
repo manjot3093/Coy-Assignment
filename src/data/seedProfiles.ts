@@ -6,55 +6,102 @@ export const SEED_PROFILES: Profile[] = [
     name: "Aanya Sharma",
     age: 21,
     photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
-    bio: "Obsessed with specialty coffee, architectural history, and film cameras. Probably reading Murakami at a quiet café.",
+    photos: [
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80"
+    ],
+    bio: "Obsessed with specialty pour-overs, brutalist architecture, and 35mm film cameras. Probably reading Murakami at a quiet café in Majnu Ka Tila.",
     collegeOrCity: "Delhi University, North Campus",
     interests: ["Film Photography", "Indie Rock", "Specialty Coffee", "Literature"],
-    occupation: "Literature Major & Freelance Writer",
-    distance: "3 km away"
+    occupation: "Literature Major & Editorial Intern",
+    distance: "3 km away",
+    pronouns: "she/her",
+    verified: true,
+    promptQuestion: "Best way to ask me out",
+    promptAnswer: "Take me to an obscure used bookstore and let me buy you an iced flat white.",
+    lifestyle: { drinking: "Socially", zodiac: "Taurus", pets: "Cat lover" }
   },
   {
     id: "coy_02",
     name: "Rhea Sen",
     age: 22,
     photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
-    bio: "Building aesthetic web apps by day, playing indie folk chords by night. Tell me your favorite hidden food spot!",
+    photos: [
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
+    ],
+    bio: "Building aesthetic web interfaces by day, playing indie acoustic riffs by night. Let's find the best butter chicken in South Delhi.",
     collegeOrCity: "IIT Delhi / South Ext.",
     interests: ["Acoustic Guitar", "Next.js", "Baking", "Thrifting"],
-    occupation: "Design Engineer",
-    distance: "5 km away"
+    occupation: "Product Design Fellow",
+    distance: "5 km away",
+    pronouns: "she/her",
+    verified: true,
+    promptQuestion: "The key to my heart is",
+    promptAnswer: "Sharing your most unhinged Spotify playlist with zero embarrassment.",
+    lifestyle: { drinking: "Rarely", zodiac: "Libra", pets: "Dog person" }
   },
   {
     id: "coy_03",
     name: "Devika Rao",
     age: 23,
     photo: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
-    bio: "Law school survivor. Passionate about civil liberties, vinyl records, and hiking in Himachal during monsoon.",
+    photos: [
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80"
+    ],
+    bio: "Law school survivor. Passionate about civil liberties, vinyl record pressing, and spontaneous weekend treks in Himachal.",
     collegeOrCity: "National Law University, Delhi",
     interests: ["Debate", "Hiking", "Vinyl Records", "Podcasts"],
     occupation: "Legal Analyst",
-    distance: "7 km away"
+    distance: "7 km away",
+    pronouns: "she/her",
+    verified: true,
+    promptQuestion: "A non-negotiable for me",
+    promptAnswer: "Being kind to service staff and appreciating good humor.",
+    lifestyle: { drinking: "Socially", zodiac: "Scorpio" }
   },
   {
     id: "coy_04",
     name: "Karan Malhotra",
     age: 22,
     photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80",
-    bio: "Formula 1 nerd (Ferrari heartbreak), weekend marathon runner, and amateur sourdough baker.",
+    photos: [
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80"
+    ],
+    bio: "Formula 1 enthusiast (enduring Ferrari pain every Sunday), amateur half-marathoner, and sourdough baker.",
     collegeOrCity: "BITS Pilani / Gurgaon",
     interests: ["Formula 1", "Running", "Sourdough", "Sci-Fi"],
     occupation: "Fintech Analyst",
-    distance: "12 km away"
+    distance: "12 km away",
+    pronouns: "he/him",
+    verified: true,
+    promptQuestion: "I geek out on",
+    promptAnswer: "Telemetry graphs in motorsport and mechanical espresso machines.",
+    lifestyle: { drinking: "Socially", zodiac: "Aries" }
   },
   {
     id: "coy_05",
     name: "Meera Kapoor",
     age: 21,
     photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80",
-    bio: "Aspiring documentary filmmaker. Let's debate A24 cinema and exchange Spotify playlists that feel like rainy evenings.",
+    photos: [
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
+    ],
+    bio: "Documentary filmmaking student. Let's debate A24 cinema, watch sunsets from Humayun's Tomb, and trade songs that feel like monsoons.",
     collegeOrCity: "Lady Shri Ram College",
     interests: ["Cinematography", "A24", "Spotify Curating", "Art Galleries"],
-    occupation: "Film Studies Student",
-    distance: "4 km away"
+    occupation: "Film Studies Major",
+    distance: "4 km away",
+    pronouns: "she/her",
+    verified: true,
+    promptQuestion: "My simple pleasures",
+    promptAnswer: "Cold rain, warm chai, and 70s rock blaring from old speakers.",
+    lifestyle: { drinking: "Never", zodiac: "Cancer" }
   },
   {
     id: "coy_06",
@@ -65,7 +112,8 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "Amity University / Noida",
     interests: ["Bouldering", "Open Source", "Gaming", "Craft Beer"],
     occupation: "Software Engineer",
-    distance: "8 km away"
+    distance: "8 km away",
+    verified: true
   },
   {
     id: "coy_07",
@@ -76,7 +124,8 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "NIFT Delhi / Hauz Khas",
     interests: ["Classical Dance", "UI/UX", "Matcha", "Pottery"],
     occupation: "Product Designer",
-    distance: "6 km away"
+    distance: "6 km away",
+    verified: true
   },
   {
     id: "coy_08",
@@ -87,7 +136,8 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "Ashoka University / Sonipat",
     interests: ["Chess", "Board Games", "Cognitive Science", "Boba Tea"],
     occupation: "Psychology & Neuro Student",
-    distance: "15 km away"
+    distance: "15 km away",
+    verified: true
   },
   {
     id: "coy_09",
@@ -97,8 +147,9 @@ export const SEED_PROFILES: Profile[] = [
     bio: "Playing drums in a jazz fusion quartet. Collecting retro synth patches and looking for someone to jam with.",
     collegeOrCity: "St. Stephen's College",
     interests: ["Jazz", "Drums", "Concerts", "Street Food"],
-    occupation: "Music Producer & Sound Designer",
-    distance: "9 km away"
+    occupation: "Sound Designer",
+    distance: "9 km away",
+    verified: true
   },
   {
     id: "coy_10",
@@ -109,7 +160,8 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "Miranda House",
     interests: ["Scuba Diving", "Environmentalism", "Kayaking", "Yoga"],
     occupation: "Sustainability Consultant",
-    distance: "11 km away"
+    distance: "11 km away",
+    verified: true
   },
   {
     id: "coy_11",
@@ -120,7 +172,8 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "St. Xavier's / Mumbai",
     interests: ["Cooking", "Horology", "Italian Food", "Travel"],
     occupation: "Brand Strategist",
-    distance: "14 km away"
+    distance: "14 km away",
+    verified: true
   },
   {
     id: "coy_12",
@@ -131,7 +184,8 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "IISc / Bangalore",
     interests: ["Astrophysics", "Stargazing", "Baking", "Sci-Fi Movies"],
     occupation: "Physics Researcher",
-    distance: "10 km away"
+    distance: "10 km away",
+    verified: true
   },
   {
     id: "coy_13",
@@ -142,7 +196,8 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "DTU Delhi",
     interests: ["Cycling", "Minimalism", "Tech Products", "Design"],
     occupation: "Associate PM",
-    distance: "13 km away"
+    distance: "13 km away",
+    verified: true
   },
   {
     id: "coy_14",
@@ -153,7 +208,8 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "College of Art, Delhi",
     interests: ["Illustration", "Plants", "Studio Ghibli", "Watercolor"],
     occupation: "Visual Illustrator",
-    distance: "5 km away"
+    distance: "5 km away",
+    verified: true
   },
   {
     id: "coy_15",
@@ -164,7 +220,8 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "Amity University / Noida",
     interests: ["Tennis", "Cold Brew", "TypeScript", "Podcasts"],
     occupation: "Frontend Engineer",
-    distance: "7 km away"
+    distance: "7 km away",
+    verified: true
   },
   {
     id: "coy_16",
@@ -175,7 +232,8 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "Shiv Nadar University",
     interests: ["Urban Design", "Shoegaze", "Rooftops", "Creative Writing"],
     occupation: "Urban Design Researcher",
-    distance: "18 km away"
+    distance: "18 km away",
+    verified: true
   },
   {
     id: "coy_17",
@@ -186,7 +244,8 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "SPA Delhi (School of Planning & Architecture)",
     interests: ["Sustainable Architecture", "Dogs", "Road Trips", "Coffee"],
     occupation: "Junior Architect",
-    distance: "16 km away"
+    distance: "16 km away",
+    verified: true
   },
   {
     id: "coy_18",
@@ -197,7 +256,8 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "IIT Bombay / Powai",
     interests: ["Machine Learning", "Stand-up Comedy", "Food Crawls", "Badminton"],
     occupation: "Data Scientist",
-    distance: "6 km away"
+    distance: "6 km away",
+    verified: true
   },
   {
     id: "coy_19",
@@ -208,7 +268,8 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "Thapar University",
     interests: ["Mechanical Keyboards", "Retro Gaming", "Espresso", "Anime"],
     occupation: "Hardware Specialist",
-    distance: "9 km away"
+    distance: "9 km away",
+    verified: true
   },
   {
     id: "coy_20",
@@ -219,7 +280,8 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "St. Stephen's College",
     interests: ["Antique Books", "Museums", "History", "Tea"],
     occupation: "History Honors Student",
-    distance: "4 km away"
+    distance: "4 km away",
+    verified: true
   },
   {
     id: "coy_21",
@@ -230,7 +292,8 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "IIIT Hyderabad",
     interests: ["Startups", "Rock Climbing", "Podcasts", "Cryptic Crosswords"],
     occupation: "Founder & Developer",
-    distance: "11 km away"
+    distance: "11 km away",
+    verified: true
   },
   {
     id: "coy_22",
@@ -241,7 +304,8 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "Pearl Academy, Delhi",
     interests: ["Vintage Fashion", "French Pop", "Thrifting", "Photography"],
     occupation: "Fashion Merchandiser",
-    distance: "8 km away"
+    distance: "8 km away",
+    verified: true
   },
   {
     id: "coy_23",
@@ -252,7 +316,8 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "Panjab University, Chandigarh",
     interests: ["Cricket", "Golden Retrievers", "Cooking", "Live Gigs"],
     occupation: "Business Development",
-    distance: "14 km away"
+    distance: "14 km away",
+    verified: true
   },
   {
     id: "coy_24",
@@ -263,7 +328,8 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "Symbiosis Pune",
     interests: ["Pottery", "Typography", "Synthwave", "Modern Art"],
     occupation: "Graphic Designer",
-    distance: "10 km away"
+    distance: "10 km away",
+    verified: true
   },
   {
     id: "coy_25",
@@ -274,7 +340,8 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "SRCC Delhi",
     interests: ["Healthtech", "Swimming", "Japanese Cuisine", "Reading"],
     occupation: "Venture Associate",
-    distance: "12 km away"
+    distance: "12 km away",
+    verified: true
   },
   {
     id: "coy_26",
@@ -285,7 +352,8 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "Loyola College / Chennai",
     interests: ["Carnatic Music", "Podcasting", "Flea Markets", "Filter Coffee"],
     occupation: "Content Producer",
-    distance: "7 km away"
+    distance: "7 km away",
+    verified: true
   },
   {
     id: "coy_27",
@@ -296,7 +364,8 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "IIT Kanpur",
     interests: ["Poker", "Behavioral Economics", "Late Drives", "Chess"],
     occupation: "Quant Analyst",
-    distance: "15 km away"
+    distance: "15 km away",
+    verified: true
   },
   {
     id: "coy_28",
@@ -307,7 +376,8 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "Christ University, Bangalore",
     interests: ["Neuroscience", "Botanical Gardens", "Playlists", "Baking"],
     occupation: "Research Assistant",
-    distance: "6 km away"
+    distance: "6 km away",
+    verified: true
   },
   {
     id: "coy_29",
@@ -318,7 +388,8 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "Amity University Jharkhand",
     interests: ["Dogs", "Stand-up Comedy", "Sourdough", "Indie Music"],
     occupation: "Software Engineer",
-    distance: "3 km away"
+    distance: "3 km away",
+    verified: true
   },
   {
     id: "coy_30",
@@ -329,7 +400,8 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "Jadavpur University, Kolkata",
     interests: ["Street Art", "Cinema", "Vinyl Records", "Street Photography"],
     occupation: "Cultural Journalist",
-    distance: "9 km away"
+    distance: "9 km away",
+    verified: true
   },
   {
     id: "coy_31",
@@ -340,7 +412,8 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "IIT Roorkee",
     interests: ["Triathlon", "Cycling", "System Architecture", "Nutrition"],
     occupation: "Backend Architect",
-    distance: "14 km away"
+    distance: "14 km away",
+    verified: true
   },
   {
     id: "coy_32",
@@ -351,12 +424,11 @@ export const SEED_PROFILES: Profile[] = [
     collegeOrCity: "LSR / South Delhi",
     interests: ["Thrifting", "K-Dramas", "Sunsets", "Economics"],
     occupation: "Economics Major",
-    distance: "5 km away"
+    distance: "5 km away",
+    verified: true
   }
 ];
 
-// Profile IDs that have already liked the logged-in user in secret.
-// When the current user swipes RIGHT on any of these profiles, an instant mutual match occurs!
 export const PRE_LIKED_PROFILE_IDS: string[] = [
   "coy_02", // Rhea Sen
   "coy_05", // Meera Kapoor
