@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Flame, Lock, Plus, Share2, Shield, Sparkles, UserCheck, Heart, ArrowRight } from 'lucide-react';
+import { UserPlus, EyeOff, Heart, Smartphone, X, Flame, ArrowRight, Check } from 'lucide-react';
 import { sound } from '@/lib/sound';
 
 interface HomeTabProps {
@@ -9,190 +9,229 @@ interface HomeTabProps {
 }
 
 export const HomeTab: React.FC<HomeTabProps> = ({ onGoToDiscover }) => {
+  const [showAddBanner, setShowAddBanner] = useState(true);
   const [showAddModal, setShowAddModal] = useState(false);
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [addedCrush, setAddedCrush] = useState(false);
+  const [phoneOrEmail, setPhoneOrEmail] = useState('');
+  const [addedSuccess, setAddedSuccess] = useState(false);
 
   const handleAddCrush = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!phoneNumber) return;
+    if (!phoneOrEmail) return;
     sound.playPop();
-    setAddedCrush(true);
+    setAddedSuccess(true);
     setTimeout(() => {
       setShowAddModal(false);
-      setPhoneNumber('');
-      setAddedCrush(false);
-    }, 1400);
+      setPhoneOrEmail('');
+      setAddedSuccess(false);
+    }, 1200);
   };
 
   return (
-    <div className="flex-1 flex flex-col p-5 pb-24 overflow-y-auto">
-      {/* Top Welcome Section */}
-      <div className="flex items-center justify-between mb-5">
-        <div>
-          <h2 className="text-xl font-extrabold text-white">Your Secret Crushes</h2>
-          <p className="text-xs text-neutral-400 mt-0.5">
-            100% Double-blind encrypted & anonymous.
-          </p>
-        </div>
-        <div className="px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-xs font-semibold flex items-center gap-1.5">
-          <Lock className="w-3.5 h-3.5" />
-          <span>Encrypted</span>
-        </div>
-      </div>
-
-      {/* Featured Discover Banner */}
-      <div
-        onClick={onGoToDiscover}
-        className="p-4 rounded-3xl bg-gradient-to-r from-pink-500/20 via-purple-500/15 to-neutral-900 border border-pink-500/30 mb-6 cursor-pointer hover:border-pink-500/60 transition-all group shadow-lg shadow-pink-500/5"
-      >
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-pink-500 to-rose-600 flex items-center justify-center text-white shadow-md shadow-pink-500/30 group-hover:scale-105 transition-transform">
-              <Flame className="w-5 h-5 fill-white" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <h4 className="text-sm font-bold text-white group-hover:text-pink-300 transition-colors">
-                  New: Discover Tab
-                </h4>
-                <span className="text-[9px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-pink-500 text-white">
-                  Live
-                </span>
-              </div>
-              <p className="text-xs text-neutral-300 mt-0.5">
-                Swipe profiles near your university
-              </p>
-            </div>
-          </div>
-          <ArrowRight className="w-4 h-4 text-pink-400 group-hover:translate-x-1 transition-transform" />
-        </div>
-      </div>
-
-      {/* Slots Status Card */}
-      <div className="p-4 rounded-3xl bg-neutral-900/80 border border-neutral-800 mb-6">
-        <div className="flex items-center justify-between mb-3">
-          <span className="text-xs font-semibold text-neutral-300">Crush Slots</span>
-          <span className="text-xs font-bold text-pink-400">3 of 5 Available</span>
-        </div>
-        {/* Progress bar */}
-        <div className="w-full h-2 rounded-full bg-neutral-800 overflow-hidden mb-4">
-          <div className="h-full rounded-full bg-gradient-to-r from-pink-500 to-rose-500 w-[60%]" />
-        </div>
-
-        {/* Existing Mock Crushes in List */}
-        <div className="space-y-2.5">
-          <div className="p-3 rounded-2xl bg-neutral-950/60 border border-neutral-800/80 flex items-center justify-between text-xs">
-            <div className="flex items-center gap-2.5">
-              <div className="w-7 h-7 rounded-full bg-neutral-800 flex items-center justify-center text-neutral-400">
-                <Lock className="w-3.5 h-3.5 text-pink-400" />
-              </div>
-              <div>
-                <p className="font-mono text-neutral-200">+91 98*** ***12</p>
-                <p className="text-[10px] text-neutral-400">Anonymous notification sent</p>
-              </div>
-            </div>
-            <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
-              Awaiting Match
-            </span>
+    <div className="flex-1 flex flex-col p-4 pb-24 overflow-y-auto bg-white select-none">
+      {/* 1. Main Coy Hero Card (Matches Screenshot Perfectly) */}
+      <div className="w-full rounded-[28px] border-2 border-black bg-white coy-shadow p-5 mb-5 flex flex-col">
+        {/* Top Decorative Illustration Header (Lilac Dot Grid with Connected Pink Dots) */}
+        <div className="w-full h-28 rounded-2xl bg-[#E8E6FF] flex items-center justify-center p-3 relative overflow-hidden mb-5">
+          {/* Subtle Dot Grid */}
+          <div className="grid grid-cols-7 gap-x-5 gap-y-3.5 opacity-60">
+            {Array.from({ length: 21 }).map((_, i) => (
+              <span key={i} className="w-1.5 h-1.5 rounded-full bg-[#8F87E0]" />
+            ))}
           </div>
 
-          <div className="p-3 rounded-2xl bg-neutral-950/60 border border-neutral-800/80 flex items-center justify-between text-xs">
-            <div className="flex items-center gap-2.5">
-              <div className="w-7 h-7 rounded-full bg-neutral-800 flex items-center justify-center text-neutral-400">
-                <Lock className="w-3.5 h-3.5 text-pink-400" />
-              </div>
-              <div>
-                <p className="font-mono text-neutral-200">a***@du.ac.in</p>
-                <p className="text-[10px] text-neutral-400">Hashed email link verified</p>
-              </div>
-            </div>
-            <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
-              Awaiting Match
-            </span>
+          {/* Two Connected Pink Dots in Center */}
+          <div className="absolute inset-0 flex items-center justify-center gap-4 pointer-events-none">
+            <span className="w-4 h-4 rounded-full bg-[#FF2E75] border-2 border-black shadow-sm" />
+            <span className="w-4 h-4 rounded-full bg-[#FF2E75] border-2 border-black shadow-sm" />
           </div>
         </div>
 
-        {/* Add Crush Button */}
+        {/* Card Heading */}
+        <h2 className="text-[26px] font-black tracking-tight text-black leading-[1.15] mb-5">
+          Find out if your<br />crush likes you back
+        </h2>
+
+        {/* 3 Step Features */}
+        <div className="space-y-4 mb-6">
+          {/* Item 1 */}
+          <div className="flex items-center gap-3.5">
+            <div className="w-9 h-9 rounded-xl bg-[#F0EFFE] flex items-center justify-center text-[#6355D8] shrink-0">
+              <UserPlus className="w-4 h-4" />
+            </div>
+            <p className="text-xs font-semibold text-neutral-800 leading-snug">
+              Add someone you like, by number or email
+            </p>
+          </div>
+
+          {/* Item 2 */}
+          <div className="flex items-center gap-3.5">
+            <div className="w-9 h-9 rounded-xl bg-[#FFF2EA] flex items-center justify-center text-[#E06D34] shrink-0">
+              <EyeOff className="w-4 h-4" />
+            </div>
+            <p className="text-xs font-semibold text-neutral-800 leading-snug">
+              We tell them someone likes them, not who
+            </p>
+          </div>
+
+          {/* Item 3 */}
+          <div className="flex items-center gap-3.5">
+            <div className="w-9 h-9 rounded-xl bg-[#FFEBF2] flex items-center justify-center text-[#FF2E75] shrink-0">
+              <Heart className="w-4 h-4 fill-[#FF2E75]" />
+            </div>
+            <p className="text-xs font-semibold text-neutral-800 leading-snug">
+              If they add you back, it&apos;s a match
+            </p>
+          </div>
+        </div>
+
+        {/* Main "Add your crushes" Button */}
         <button
           onClick={() => {
             sound.playPop();
             setShowAddModal(true);
           }}
-          className="w-full mt-4 py-3 rounded-2xl bg-gradient-to-r from-pink-500 to-rose-600 text-white font-semibold text-xs shadow-md shadow-pink-500/20 flex items-center justify-center gap-2 hover:opacity-95 active:scale-98 transition-all"
+          className="w-full py-3.5 rounded-full bg-[#FF2E75] hover:bg-[#F01E65] active:scale-98 border-2 border-black text-black font-extrabold text-sm tracking-wide transition-all shadow-sm"
         >
-          <Plus className="w-4 h-4" />
-          Add Another Secret Crush
+          Add your crushes
         </button>
       </div>
 
-      {/* Invite Friends Referral Card */}
-      <div className="p-4 rounded-3xl bg-neutral-900/60 border border-neutral-800/80 flex items-center justify-between text-xs mb-6">
+      {/* 2. "Add Coy to your home screen" Banner (From Screenshot) */}
+      {showAddBanner && (
+        <div className="w-full p-3 px-3.5 rounded-2xl bg-white border border-neutral-200/90 shadow-sm flex items-center justify-between mb-6">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-[#EAF2FF] flex items-center justify-center text-[#3B82F6] shrink-0">
+              <Smartphone className="w-5 h-5" />
+            </div>
+            <div>
+              <p className="text-xs font-bold text-neutral-900 leading-tight">
+                Add Coy to your home screen
+              </p>
+              <p className="text-[11px] text-neutral-500 mt-0.5">
+                Open it like an app, in one tap.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3 shrink-0">
+            <button
+              onClick={() => sound.playPop()}
+              className="text-xs font-bold text-[#FF2E75] hover:opacity-80"
+            >
+              Add
+            </button>
+            <button
+              onClick={() => setShowAddBanner(false)}
+              className="text-neutral-400 hover:text-neutral-600 p-1"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* 3. "Discover Tab" Bridge Banner */}
+      <div
+        onClick={() => {
+          sound.playPop();
+          onGoToDiscover();
+        }}
+        className="w-full p-3.5 rounded-2xl bg-[#FFF5F8] border border-[#FFD0DE] flex items-center justify-between mb-6 cursor-pointer hover:bg-[#FFEDF3] transition-all group shadow-sm"
+      >
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 shrink-0">
-            <Share2 className="w-4 h-4" />
+          <div className="w-9 h-9 rounded-xl bg-[#FF2E75] text-white flex items-center justify-center shrink-0 shadow-sm">
+            <Flame className="w-5 h-5 fill-white" />
           </div>
           <div>
-            <p className="font-semibold text-white">Unlock Extra Slots</p>
-            <p className="text-[11px] text-neutral-400">Invite 2 friends to earn 1 free crush slot</p>
+            <div className="flex items-center gap-2">
+              <p className="text-xs font-bold text-neutral-900">
+                Discover Mode
+              </p>
+              <span className="text-[9px] uppercase font-bold tracking-wider px-1.5 py-0.2 rounded bg-[#FF2E75] text-white">
+                New
+              </span>
+            </div>
+            <p className="text-[11px] text-neutral-600 mt-0.5">
+              Swipe profiles near Delhi & campuses
+            </p>
           </div>
         </div>
-        <button
-          onClick={() => sound.playPop()}
-          className="px-3 py-1.5 rounded-full bg-neutral-800 hover:bg-neutral-700 text-neutral-200 text-[11px] font-medium border border-neutral-700"
-        >
-          Copy Link
-        </button>
+        <ArrowRight className="w-4 h-4 text-[#FF2E75] group-hover:translate-x-1 transition-transform" />
       </div>
 
-      {/* How it works info */}
-      <div className="p-4 rounded-3xl bg-neutral-950 border border-neutral-800 text-[11px] text-neutral-400 space-y-2">
-        <div className="flex items-center gap-2 text-white font-semibold">
-          <Shield className="w-3.5 h-3.5 text-emerald-400" />
-          <span>The Coy Double-Blind Guarantee</span>
+      {/* 4. "Your crushes" Section (From Screenshot: "Your crushes" with 1/3 pill) */}
+      <div className="mb-4">
+        <div className="flex items-center justify-between mb-3 px-0.5">
+          <h3 className="text-sm font-black text-black">Your crushes</h3>
+          <span className="text-[11px] font-bold text-neutral-600 bg-neutral-100 border border-neutral-200/80 px-2 py-0.5 rounded-full">
+            1/3
+          </span>
         </div>
-        <p className="leading-relaxed">
-          Your crush will receive an anonymous heads-up via WhatsApp or SMS. They will never know who added them unless they independently add you back too.
-        </p>
+
+        {/* Existing Crush Card: Ankit Raj +91 91289 13877 */}
+        <div className="w-full p-3.5 rounded-2xl bg-[#FAFAFC] border border-neutral-200/80 flex items-center justify-between shadow-xs">
+          <div className="flex items-center gap-3">
+            {/* Peach Avatar with Initial "A" */}
+            <div className="w-10 h-10 rounded-full bg-[#FFE7DB] text-[#C45419] font-black text-sm flex items-center justify-center shrink-0">
+              A
+            </div>
+            <div>
+              <p className="text-sm font-bold text-neutral-900 leading-tight">Ankit Raj</p>
+              <p className="text-xs text-neutral-500 font-medium mt-0.5">+91 91289 13877</p>
+            </div>
+          </div>
+
+          <span className="text-[10px] font-bold text-amber-700 bg-amber-50 border border-amber-200/80 px-2.5 py-1 rounded-full">
+            Waiting
+          </span>
+        </div>
       </div>
 
-      {/* Add Crush Modal Popup */}
+      {/* Add Crush Modal */}
       {showAddModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fadeIn">
-          <div className="w-full max-w-sm rounded-3xl bg-neutral-900 border border-neutral-800 p-6 shadow-2xl relative">
-            <h3 className="text-lg font-bold text-white mb-1">Add a Secret Crush</h3>
-            <p className="text-xs text-neutral-400 mb-4">
-              Enter their phone number or college email. Only you will see this.
-            </p>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
+          <div className="w-full max-w-sm rounded-3xl bg-white border-2 border-black p-6 coy-shadow space-y-4">
+            <div className="flex items-center justify-between pb-2 border-b border-neutral-100">
+              <h3 className="text-base font-bold text-neutral-900">Add a Secret Crush</h3>
+              <button
+                onClick={() => setShowAddModal(false)}
+                className="p-1 rounded-full bg-neutral-100 text-neutral-500 hover:text-black"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
 
-            {addedCrush ? (
-              <div className="p-6 text-center text-emerald-400 font-medium text-xs flex flex-col items-center gap-2">
-                <div className="w-10 h-10 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
-                  <UserCheck className="w-5 h-5 text-emerald-400" />
+            {addedSuccess ? (
+              <div className="p-6 text-center text-emerald-600 font-bold text-xs flex flex-col items-center gap-2">
+                <div className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center">
+                  <Check className="w-5 h-5 stroke-[2.5]" />
                 </div>
-                <span>Encrypted & anonymous heads-up queued!</span>
+                <span>Encrypted notification sent!</span>
               </div>
             ) : (
               <form onSubmit={handleAddCrush} className="space-y-3">
+                <p className="text-xs text-neutral-600">
+                  Enter their phone number or email. We send an anonymous heads-up without revealing who added them.
+                </p>
                 <input
                   type="text"
                   required
-                  value={phoneNumber}
-                  onChange={(e) => setPhoneNumber(e.target.value)}
+                  value={phoneOrEmail}
+                  onChange={(e) => setPhoneOrEmail(e.target.value)}
                   placeholder="e.g. +91 98765 43210 or email"
-                  className="w-full px-4 py-3 rounded-2xl bg-neutral-950 border border-neutral-800 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-pink-500 transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-neutral-50 border border-neutral-300 text-xs text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-black transition-colors"
                 />
-                <div className="flex gap-2">
+                <div className="flex gap-2 pt-1">
                   <button
                     type="button"
                     onClick={() => setShowAddModal(false)}
-                    className="flex-1 py-2.5 rounded-2xl bg-neutral-800 text-neutral-300 text-xs font-medium"
+                    className="flex-1 py-2.5 rounded-full bg-neutral-100 text-neutral-700 text-xs font-bold"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
-                    className="flex-1 py-2.5 rounded-2xl bg-gradient-to-r from-pink-500 to-rose-600 text-white text-xs font-semibold shadow-md shadow-pink-500/20"
+                    className="flex-1 py-2.5 rounded-full bg-[#FF2E75] border-2 border-black text-black text-xs font-extrabold coy-shadow-sm"
                   >
                     Add Secretly
                   </button>

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { Flame, Wifi, Battery, Signal } from 'lucide-react';
+import { Settings, X } from 'lucide-react';
 import { MatchRecord, Profile } from '@/lib/types';
 import { sound } from '@/lib/sound';
 import { NavigationBar, TabType } from '@/components/NavigationBar';
@@ -15,6 +15,7 @@ export default function App() {
   const [matches, setMatches] = useState<MatchRecord[]>([]);
   const [newMatchProfile, setNewMatchProfile] = useState<Profile | null>(null);
   const [activeChatProfile, setActiveChatProfile] = useState<Profile | null>(null);
+  const [showSettings, setShowSettings] = useState(false);
 
   // Fetch mutual matches
   const fetchMatches = useCallback(async () => {
@@ -38,7 +39,7 @@ export default function App() {
     setActiveTab(tab);
   };
 
-  // When a mutual match occurs during swipe
+  // Mutual match callback
   const handleMatch = (profile: Profile) => {
     setNewMatchProfile(profile);
     fetchMatches();
@@ -52,44 +53,47 @@ export default function App() {
     setActiveTab('matches');
   };
 
+  const handleResetFeed = async () => {
+    try {
+      sound.playPop();
+      await fetch('/api/reset', { method: 'POST' });
+      await fetchMatches();
+      setShowSettings(false);
+      window.location.reload();
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
-    <main className="flex-1 flex flex-col relative w-full h-screen overflow-hidden bg-neutral-950">
-      {/* Simulated Mobile Status Bar (9:41, Cellular, Wifi, Battery) */}
-      <div className="w-full px-6 pt-3 pb-1 flex items-center justify-between text-[11px] font-semibold text-neutral-400 select-none z-30 shrink-0">
-        <span>9:41</span>
-        {/* Dynamic Island pill */}
-        <div className="w-24 h-4 rounded-full bg-black border border-neutral-800/80 mx-auto hidden sm:block" />
-        <div className="flex items-center gap-1.5 text-neutral-300">
-          <Signal className="w-3.5 h-3.5" />
-          <Wifi className="w-3.5 h-3.5" />
-          <Battery className="w-4 h-4 text-emerald-400" />
-        </div>
-      </div>
+    <main className="flex-1 flex flex-col relative w-full h-screen overflow-hidden bg-white">
+      {/* Top Header - Exact Coy Branding */}
+      <header className="px-5 py-3.5 bg-white border-b border-neutral-100 flex items-center justify-between z-30 shrink-0 select-none">
+        {/* Left spacer for centering logo */}
+        <div className="w-9" />
 
-      {/* Top Coy App Header */}
-      <header className="px-5 py-2.5 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800/80 flex items-center justify-between z-30 shrink-0 select-none">
-        <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-2xl bg-gradient-to-tr from-pink-500 to-rose-600 flex items-center justify-center shadow-lg shadow-pink-500/25">
-            <Flame className="w-4 h-4 text-white fill-white" />
-          </div>
-          <div>
-            <div className="flex items-center gap-1.5">
-              <h1 className="text-base font-black tracking-wider text-white">COY</h1>
-              <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-pink-500/20 text-pink-400 border border-pink-500/30">
-                {activeTab === 'discover' ? 'DISCOVER' : activeTab === 'matches' ? 'MATCHES' : 'CRUSHES'}
-              </span>
-            </div>
-            <p className="text-[9px] text-neutral-400 font-medium tracking-tight">Double-blind crush matching</p>
-          </div>
+        {/* Centered Coy. Logo */}
+        <div className="flex items-center select-none cursor-pointer" onClick={() => handleSelectTab('home')}>
+          <span className="text-2xl font-black tracking-tight text-black font-sans leading-none">
+            coy
+          </span>
+          <span className="w-2.5 h-2.5 rounded-full bg-[#FF2E75] ml-0.5 inline-block -mb-2" />
         </div>
 
-        <div className="flex items-center gap-1.5 text-[11px] text-neutral-400 bg-neutral-900 border border-neutral-800 px-2.5 py-1 rounded-full">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-neutral-300 font-medium">Encrypted</span>
-        </div>
+        {/* Settings Gear Icon (Right) */}
+        <button
+          onClick={() => {
+            sound.playPop();
+            setShowSettings(true);
+          }}
+          className="w-9 h-9 rounded-full bg-neutral-100 hover:bg-neutral-200 border border-neutral-200/80 flex items-center justify-center text-neutral-700 transition-colors"
+          aria-label="Settings"
+        >
+          <Settings className="w-4 h-4 stroke-[2]" />
+        </button>
       </header>
 
-      {/* Main Tab Content */}
+      {/* Main Tab Views */}
       <div className="flex-1 flex flex-col overflow-hidden relative">
         {activeTab === 'home' && (
           <HomeTab onGoToDiscover={() => handleSelectTab('discover')} />
@@ -126,6 +130,41 @@ export default function App() {
         onSelectTab={handleSelectTab}
         matchesCount={matches.length}
       />
+
+      {/* Settings Modal */}
+      {showSettings && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
+          <div className="w-full max-w-sm rounded-3xl bg-white border-2 border-black p-6 coy-shadow space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-neutral-100">
+              <h3 className="text-base font-bold text-neutral-900">Settings</h3>
+              <button
+                onClick={() => setShowSettings(false)}
+                className="p-1 rounded-full bg-neutral-100 text-neutral-500 hover:text-black"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            <div className="space-y-3 text-xs text-neutral-700">
+              <div className="p-3 rounded-2xl bg-neutral-50 border border-neutral-200">
+                <p className="font-bold text-neutral-900">Coy Double-Blind Promise</p>
+                <p className="text-[11px] text-neutral-500 mt-0.5">
+                  Your crushes are stored as encrypted hashes. Nobody ever finds out unless it is mutual.
+                </p>
+              </div>
+
+              <div className="pt-2">
+                <button
+                  onClick={handleResetFeed}
+                  className="w-full py-2.5 rounded-full bg-neutral-100 hover:bg-neutral-200 text-neutral-800 text-xs font-bold border border-neutral-300 transition-colors"
+                >
+                  Reset Discovery Deck (32 Profiles)
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

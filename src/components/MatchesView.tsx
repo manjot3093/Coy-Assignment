@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Heart, MessageCircle, Send, X, Sparkles, MapPin, GraduationCap, CheckCheck } from 'lucide-react';
+import { Heart, MessageCircle, Send, X, Sparkles, CheckCheck } from 'lucide-react';
 import { MatchRecord, Profile } from '@/lib/types';
 import { sound } from '@/lib/sound';
 
@@ -43,7 +43,7 @@ export const MatchesView: React.FC<MatchesViewProps> = ({
     }));
     setInputText('');
 
-    // Realistic simulated typing indicator and friendly response
+    // Simulated reply
     setTimeout(() => {
       setIsTyping(true);
       setTimeout(() => {
@@ -60,24 +60,24 @@ export const MatchesView: React.FC<MatchesViewProps> = ({
           ],
         }));
         sound.playPop();
-      }, 1600);
+      }, 1500);
     }, 600);
   };
 
   return (
-    <div className="flex-1 flex flex-col p-4 pb-24 overflow-y-auto select-none">
+    <div className="flex-1 flex flex-col p-4 pb-24 overflow-y-auto select-none bg-white">
       {/* Header */}
-      <div className="flex items-center justify-between mb-4 pb-2 border-b border-neutral-800">
+      <div className="flex items-center justify-between mb-4 pb-2 border-b border-neutral-100">
         <div>
-          <h2 className="text-xl font-extrabold text-white flex items-center gap-2">
+          <h2 className="text-xl font-black text-black flex items-center gap-2">
             Matches & Chats
             {matches.length > 0 && (
-              <span className="text-xs px-2 py-0.5 rounded-full bg-pink-500/20 text-pink-400 font-bold border border-pink-500/30">
+              <span className="text-xs px-2 py-0.5 rounded-full bg-[#FFEBF2] text-[#FF2E75] font-extrabold border border-[#FFD0DE]">
                 {matches.length}
               </span>
             )}
           </h2>
-          <p className="text-xs text-neutral-400 mt-0.5">
+          <p className="text-xs text-neutral-500 mt-0.5">
             Double-blind mutual connections
           </p>
         </div>
@@ -85,11 +85,11 @@ export const MatchesView: React.FC<MatchesViewProps> = ({
 
       {matches.length === 0 ? (
         <div className="flex-1 flex flex-col items-center justify-center p-8 text-center my-auto">
-          <div className="w-16 h-16 rounded-3xl bg-neutral-900 border border-neutral-800 flex items-center justify-center mb-4 text-neutral-500 shadow-inner">
-            <Heart className="w-8 h-8 stroke-[1.5]" />
+          <div className="w-16 h-16 rounded-3xl bg-[#FFF5F8] border-2 border-black flex items-center justify-center mb-4 coy-shadow-sm text-[#FF2E75]">
+            <Heart className="w-8 h-8 fill-[#FF2E75]" />
           </div>
-          <h3 className="text-base font-bold text-white mb-1">No Mutual Matches Yet</h3>
-          <p className="text-xs text-neutral-400 max-w-xs mb-6 leading-relaxed">
+          <h3 className="text-base font-black text-black mb-1">No Mutual Matches Yet</h3>
+          <p className="text-xs text-neutral-500 max-w-xs mb-6 leading-relaxed">
             When you swipe right on someone who has secretly liked you too, they will appear here instantly!
           </p>
           <button
@@ -97,7 +97,7 @@ export const MatchesView: React.FC<MatchesViewProps> = ({
               sound.playPop();
               onBackToDiscover();
             }}
-            className="px-6 py-2.5 rounded-full bg-gradient-to-r from-pink-500 to-rose-600 text-white font-semibold text-xs shadow-md shadow-pink-500/20 hover:opacity-95 transition-all active:scale-95"
+            className="px-6 py-3 rounded-full bg-[#FF2E75] border-2 border-black text-black font-extrabold text-xs coy-shadow-sm hover:opacity-95 transition-all active:scale-95"
           >
             Explore Discover Deck
           </button>
@@ -106,7 +106,7 @@ export const MatchesView: React.FC<MatchesViewProps> = ({
         <div className="space-y-5">
           {/* Top Horizontal Carousel: "New Matches" */}
           <div>
-            <h3 className="text-xs font-bold text-neutral-400 uppercase tracking-wider mb-2.5 px-1">
+            <h3 className="text-xs font-black text-neutral-400 uppercase tracking-wider mb-2.5 px-0.5">
               New Mutual Matches
             </h3>
             <div className="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-none">
@@ -116,8 +116,8 @@ export const MatchesView: React.FC<MatchesViewProps> = ({
                   onClick={() => handleOpenChat(match.profile)}
                   className="flex flex-col items-center gap-1.5 cursor-pointer shrink-0 group"
                 >
-                  <div className="relative p-0.5 rounded-full bg-gradient-to-tr from-pink-500 via-rose-500 to-purple-500 shadow-md group-hover:scale-105 transition-transform">
-                    <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-neutral-950 bg-neutral-900">
+                  <div className="relative p-0.5 rounded-full bg-[#FF2E75] border-2 border-black coy-shadow-sm group-hover:scale-105 transition-transform">
+                    <div className="w-13 h-13 rounded-full overflow-hidden border border-white bg-neutral-100">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={match.profile.photo}
@@ -125,9 +125,8 @@ export const MatchesView: React.FC<MatchesViewProps> = ({
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <span className="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-neutral-950" />
                   </div>
-                  <span className="text-[11px] font-medium text-neutral-200 group-hover:text-pink-400 truncate max-w-[64px]">
+                  <span className="text-[11px] font-bold text-neutral-800 group-hover:text-[#FF2E75] truncate max-w-[64px]">
                     {match.profile.name.split(' ')[0]}
                   </span>
                 </div>
@@ -137,7 +136,7 @@ export const MatchesView: React.FC<MatchesViewProps> = ({
 
           {/* Conversations Section */}
           <div>
-            <h3 className="text-xs font-bold text-neutral-400 uppercase tracking-wider mb-2.5 px-1">
+            <h3 className="text-xs font-black text-neutral-400 uppercase tracking-wider mb-2.5 px-0.5">
               Conversations
             </h3>
             <div className="grid grid-cols-1 gap-2.5">
@@ -149,42 +148,42 @@ export const MatchesView: React.FC<MatchesViewProps> = ({
                   <div
                     key={match.id}
                     onClick={() => handleOpenChat(match.profile)}
-                    className="p-3 rounded-2xl bg-neutral-900/90 border border-neutral-800/80 hover:border-pink-500/40 transition-all cursor-pointer flex items-center gap-3.5 group shadow-sm active:scale-98"
+                    className="p-3 rounded-2xl bg-white border-2 border-black/80 hover:border-black hover:coy-shadow-sm transition-all cursor-pointer flex items-center gap-3.5 group shadow-xs"
                   >
                     <div className="relative shrink-0">
-                      <div className="w-13 h-13 rounded-2xl overflow-hidden border border-neutral-700 shadow-md">
+                      <div className="w-12 h-12 rounded-xl overflow-hidden border border-neutral-300">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={match.profile.photo}
                           alt={match.profile.name}
-                          className="w-13 h-13 object-cover group-hover:scale-105 transition-transform"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                         />
                       </div>
                     </div>
 
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between mb-0.5">
-                        <h4 className="text-sm font-bold text-white group-hover:text-pink-400 transition-colors truncate">
+                        <h4 className="text-sm font-bold text-neutral-900 group-hover:text-[#FF2E75] transition-colors truncate">
                           {match.profile.name}
                         </h4>
                         <span className="text-[10px] text-neutral-400 font-medium">
                           {new Date(match.matchedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                         </span>
                       </div>
-                      <p className="text-xs text-neutral-400 truncate">
+                      <p className="text-xs text-neutral-500 truncate font-medium">
                         {lastMsg ? (
-                          <span className={lastMsg.sender === 'me' ? 'text-neutral-300' : 'text-pink-300 font-medium'}>
+                          <span className={lastMsg.sender === 'me' ? 'text-neutral-800' : 'text-[#FF2E75] font-bold'}>
                             {lastMsg.sender === 'me' ? 'You: ' : ''}{lastMsg.text}
                           </span>
                         ) : (
                           <span className="italic text-neutral-400">
-                            Mutual crush! Say hello to {match.profile.name.split(' ')[0]}
+                            Mutual match! Say hello to {match.profile.name.split(' ')[0]}
                           </span>
                         )}
                       </p>
                     </div>
 
-                    <div className="p-2 rounded-full bg-neutral-800 text-neutral-400 group-hover:bg-pink-500 group-hover:text-white transition-all shrink-0">
+                    <div className="p-2 rounded-full bg-neutral-100 text-neutral-600 group-hover:bg-[#FF2E75] group-hover:text-black group-hover:border-black group-hover:border transition-all shrink-0">
                       <MessageCircle className="w-4 h-4" />
                     </div>
                   </div>
@@ -197,28 +196,25 @@ export const MatchesView: React.FC<MatchesViewProps> = ({
 
       {/* Slide-over Chat Modal */}
       {activeChatProfile && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn">
-          <div className="w-full max-w-sm rounded-[32px] bg-neutral-900 border border-neutral-800 shadow-2xl overflow-hidden flex flex-col h-[540px]">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
+          <div className="w-full max-w-sm rounded-[32px] bg-white border-2 border-black coy-shadow overflow-hidden flex flex-col h-[540px]">
             {/* Chat Header */}
-            <div className="p-4 bg-neutral-950 border-b border-neutral-800 flex items-center justify-between">
+            <div className="p-3.5 px-4 bg-white border-b border-neutral-200 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="relative">
-                  <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-pink-500/70">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={activeChatProfile.photo}
-                      alt={activeChatProfile.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-neutral-950" />
+                <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#FF2E75]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={activeChatProfile.photo}
+                    alt={activeChatProfile.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white leading-tight">
+                  <h4 className="text-sm font-black text-black leading-tight">
                     {activeChatProfile.name}
                   </h4>
-                  <p className="text-[10px] text-emerald-400 font-medium">
-                    Mutual crush • Active now
+                  <p className="text-[10px] text-emerald-600 font-bold">
+                    Mutual crush • Active
                   </p>
                 </div>
               </div>
@@ -228,7 +224,7 @@ export const MatchesView: React.FC<MatchesViewProps> = ({
                   sound.playPop();
                   setActiveChatProfile(null);
                 }}
-                className="p-1.5 rounded-full bg-neutral-800 text-neutral-400 hover:text-white transition-colors"
+                className="p-1.5 rounded-full bg-neutral-100 text-neutral-500 hover:text-black transition-colors"
                 aria-label="Close chat"
               >
                 <X className="w-4 h-4" />
@@ -236,14 +232,14 @@ export const MatchesView: React.FC<MatchesViewProps> = ({
             </div>
 
             {/* Chat Body */}
-            <div className="flex-1 p-4 overflow-y-auto space-y-3">
+            <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-[#FAFAFC]">
               <div className="text-center my-2">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-[10px]">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFEBF2] border border-[#FFD0DE] text-[#FF2E75] text-[10px] font-bold">
                   <Sparkles className="w-3 h-3" />
                   Matched on Coy • Double-blind verified
                 </div>
-                <p className="text-[11px] text-neutral-400 mt-1">
-                  Both of you secretly swiped right. Break the ice!
+                <p className="text-[11px] text-neutral-500 mt-1 font-medium">
+                  Both of you secretly liked each other. Break the ice!
                 </p>
               </div>
 
@@ -256,24 +252,24 @@ export const MatchesView: React.FC<MatchesViewProps> = ({
                   }`}
                 >
                   <div
-                    className={`max-w-[78%] px-3.5 py-2 rounded-2xl text-xs leading-relaxed ${
+                    className={`max-w-[78%] px-4 py-2.5 rounded-2xl text-xs font-medium leading-relaxed ${
                       msg.sender === 'me'
-                        ? 'bg-gradient-to-r from-pink-500 to-rose-600 text-white rounded-br-none shadow-sm'
-                        : 'bg-neutral-800 text-neutral-200 rounded-bl-none border border-neutral-700/60'
+                        ? 'bg-[#FF2E75] text-black border-2 border-black rounded-br-none coy-shadow-sm font-bold'
+                        : 'bg-white text-neutral-900 border border-neutral-300 rounded-bl-none shadow-xs'
                     }`}
                   >
                     {msg.text}
                   </div>
-                  <div className="flex items-center gap-1 text-[9px] text-neutral-400 mt-0.5 px-1">
+                  <div className="flex items-center gap-1 text-[9px] text-neutral-400 mt-0.5 px-1 font-medium">
                     <span>{msg.time}</span>
-                    {msg.sender === 'me' && <CheckCheck className="w-3 h-3 text-sky-400" />}
+                    {msg.sender === 'me' && <CheckCheck className="w-3 h-3 text-sky-500" />}
                   </div>
                 </div>
               ))}
 
-              {/* Typing indicator bubble */}
+              {/* Typing indicator */}
               {isTyping && (
-                <div className="flex items-center gap-1.5 p-2 rounded-2xl bg-neutral-800 border border-neutral-700/50 w-16 animate-pulse">
+                <div className="flex items-center gap-1.5 p-2 px-3 rounded-2xl bg-white border border-neutral-300 w-16 shadow-xs animate-pulse">
                   <div className="w-1.5 h-1.5 rounded-full bg-neutral-400 animate-bounce" />
                   <div className="w-1.5 h-1.5 rounded-full bg-neutral-400 animate-bounce [animation-delay:0.2s]" />
                   <div className="w-1.5 h-1.5 rounded-full bg-neutral-400 animate-bounce [animation-delay:0.4s]" />
@@ -287,19 +283,19 @@ export const MatchesView: React.FC<MatchesViewProps> = ({
                 e.preventDefault();
                 handleSendMessage(activeChatProfile.id);
               }}
-              className="p-3 bg-neutral-950 border-t border-neutral-800 flex items-center gap-2"
+              className="p-3 bg-white border-t border-neutral-200 flex items-center gap-2"
             >
               <input
                 type="text"
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
                 placeholder={`Message ${activeChatProfile.name}...`}
-                className="flex-1 px-4 py-2.5 rounded-full bg-neutral-900 border border-neutral-800 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-pink-500 transition-colors"
+                className="flex-1 px-4 py-2.5 rounded-full bg-neutral-100 border border-neutral-300 text-xs text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-black transition-colors"
               />
               <button
                 type="submit"
                 disabled={!inputText.trim()}
-                className="p-2.5 rounded-full bg-gradient-to-r from-pink-500 to-rose-600 text-white disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-95 transition-all shadow-md shadow-pink-500/20"
+                className="p-2.5 rounded-full bg-[#FF2E75] border-2 border-black text-black disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-95 transition-all coy-shadow-sm"
                 aria-label="Send message"
               >
                 <Send className="w-4 h-4" />
