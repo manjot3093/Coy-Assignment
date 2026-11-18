@@ -106,27 +106,28 @@ export const MatchesView: React.FC<MatchesViewProps> = ({
         <div className="space-y-5">
           {/* Top Horizontal Carousel: "New Matches" */}
           <div>
-            <h3 className="text-xs font-black text-neutral-400 uppercase tracking-wider mb-2.5 px-0.5">
+            <h3 className="text-xs font-black text-neutral-400 uppercase tracking-wider mb-3 px-0.5">
               New Mutual Matches
             </h3>
-            <div className="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-none">
+            <div className="flex items-center gap-4 overflow-x-auto pb-3 scrollbar-none">
               {matches.map((match) => (
                 <div
                   key={`avatar-${match.id}`}
                   onClick={() => handleOpenChat(match.profile)}
                   className="flex flex-col items-center gap-1.5 cursor-pointer shrink-0 group"
                 >
-                  <div className="relative p-0.5 rounded-full bg-[#FF2E75] border-2 border-black coy-shadow-sm group-hover:scale-105 transition-transform">
-                    <div className="w-13 h-13 rounded-full overflow-hidden border border-white bg-neutral-100">
+                  {/* Avatar ring with strict bounded dimensions */}
+                  <div className="w-18 h-18 rounded-full p-1 bg-[#FF2E75] border-2 border-black coy-shadow-sm flex items-center justify-center group-hover:scale-105 transition-transform shrink-0">
+                    <div className="w-15 h-15 rounded-full overflow-hidden border border-white bg-neutral-100 shrink-0">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={match.profile.photo}
                         alt={match.profile.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover shrink-0"
                       />
                     </div>
                   </div>
-                  <span className="text-[11px] font-bold text-neutral-800 group-hover:text-[#FF2E75] truncate max-w-[64px]">
+                  <span className="text-[11px] font-bold text-neutral-800 group-hover:text-[#FF2E75] truncate max-w-[70px]">
                     {match.profile.name.split(' ')[0]}
                   </span>
                 </div>
@@ -150,15 +151,13 @@ export const MatchesView: React.FC<MatchesViewProps> = ({
                     onClick={() => handleOpenChat(match.profile)}
                     className="p-3 rounded-2xl bg-white border-2 border-black/80 hover:border-black hover:coy-shadow-sm transition-all cursor-pointer flex items-center gap-3.5 group shadow-xs"
                   >
-                    <div className="relative shrink-0">
-                      <div className="w-12 h-12 rounded-xl overflow-hidden border border-neutral-300">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={match.profile.photo}
-                          alt={match.profile.name}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform"
-                        />
-                      </div>
+                    <div className="w-12 h-12 rounded-xl overflow-hidden border border-neutral-300 shrink-0">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={match.profile.photo}
+                        alt={match.profile.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                      />
                     </div>
 
                     <div className="flex-1 min-w-0">
@@ -201,7 +200,7 @@ export const MatchesView: React.FC<MatchesViewProps> = ({
             {/* Chat Header */}
             <div className="p-3.5 px-4 bg-white border-b border-neutral-200 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#FF2E75]">
+                <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#FF2E75] shrink-0">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={activeChatProfile.photo}

@@ -614,6 +614,119 @@
     "coy_23",
     "coy_28"
   ],
-  "swipes": [],
-  "matches": []
+  "swipes": [
+    {
+      "id": "83795ba5-a2c5-46be-ab17-88bc599541c8",
+      "userId": "current_user",
+      "profileId": "coy_01",
+      "action": "pass",
+      "timestamp": "2026-11-18T18:35:54.787Z"
+    },
+    {
+      "id": "1bd10ed4-4dd2-4fe9-8d36-df3ef755a246",
+      "userId": "current_user",
+      "profileId": "coy_02",
+      "action": "pass",
+      "timestamp": "2026-11-18T18:35:55.196Z"
+    },
+    {
+      "id": "d56d7090-f5e9-4b9a-b880-efaae2957dd5",
+      "userId": "current_user",
+      "profileId": "coy_03",
+      "action": "pass",
+      "timestamp": "2026-11-18T18:35:56.039Z"
+    },
+    {
+      "id": "faaff493-5029-426c-a04c-6b9e2e52ed9e",
+      "userId": "current_user",
+      "profileId": "coy_04",
+      "action": "pass",
+      "timestamp": "2026-11-18T18:35:56.963Z"
+    },
+    {
+      "id": "7e7f6809-be95-45dd-ad7e-a94b48482d89",
+      "userId": "current_user",
+      "profileId": "coy_05",
+      "action": "like",
+      "timestamp": "2026-11-18T18:36:05.120Z"
+    },
+    {
+      "id": "13c98e7b-8f50-4058-9590-ade881c8e8c3",
+      "userId": "current_user",
+      "profileId": "coy_06",
+      "action": "pass",
+      "timestamp": "2026-11-18T18:36:09.076Z"
+    },
+    {
+      "id": "40c7a53f-dde5-4e24-9171-c2a677e3bf36",
+      "userId": "current_user",
+      "profileId": "coy_07",
+      "action": "pass",
+      "timestamp": "2026-11-18T18:36:09.891Z"
+    },
+    {
+      "id": "706d8624-01d4-4e63-8a39-86719097317f",
+      "userId": "current_user",
+      "profileId": "coy_08",
+      "action": "pass",
+      "timestamp": "2026-11-18T18:36:10.517Z"
+    },
+    {
+      "id": "6212945a-beca-444f-a386-907325d109f1",
+      "userId": "current_user",
+      "profileId": "coy_09",
+      "action": "pass",
+      "timestamp": "2026-11-18T18:36:11.177Z"
+    },
+    {
+      "id": "d79173df-a02e-408f-ad24-aaaf97f122a9",
+      "userId": "current_user",
+      "profileId": "coy_10",
+      "action": "pass",
+      "timestamp": "2026-11-18T18:36:14.791Z"
+    },
+    {
+      "id": "35b3c9b3-7010-4fdb-998f-505dbbc1f260",
+      "userId": "current_user",
+      "profileId": "coy_11",
+      "action": "pass",
+      "timestamp": "2026-11-18T18:36:15.547Z"
+    }
+  ],
+  "matches": [
+    {
+      "id": "d488d5eb-a205-4e36-89b8-6d0bf10ededb",
+      "userId": "current_user",
+      "profileId": "coy_05",
+      "matchedAt": "2026-11-18T18:36:05.120Z",
+      "profile": {
+        "id": "coy_05",
+        "name": "Meera Kapoor",
+        "age": 21,
+        "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80",
+        "photos": [
+          "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
+        ],
+        "bio": "Documentary filmmaking student. Let's debate A24 cinema, watch sunsets from Humayun's Tomb, and trade songs that feel like monsoons.",
+        "collegeOrCity": "Lady Shri Ram College",
+        "interests": [
+          "Cinematography",
+          "A24",
+          "Spotify Curating",
+          "Art Galleries"
+        ],
+        "occupation": "Film Studies Major",
+        "distance": "4 km away",
+        "pronouns": "she/her",
+        "verified": true,
+        "promptQuestion": "My simple pleasures",
+        "promptAnswer": "Cold rain, warm chai, and 70s rock blaring from old speakers.",
+        "lifestyle": {
+          "drinking": "Never",
+          "zodiac": "Cancer"
+        }
+      }
+    }
+  ]
 }

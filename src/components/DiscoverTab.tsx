@@ -179,7 +179,7 @@ export const DiscoverTab: React.FC<DiscoverTabProps> = ({
             matchesCount={matchesCount}
           />
         ) : (
-          <AnimatePresence>
+          <AnimatePresence mode="popLayout">
             {/* Background Card */}
             {profiles.length > 1 && (
               <SwipeCard
