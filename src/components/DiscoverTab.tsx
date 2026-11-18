@@ -31,8 +31,11 @@ export const DiscoverTab: React.FC<DiscoverTabProps> = ({
       setLoading(true);
       setError(null);
       const res = await fetch('/api/feed');
+      if (!res.ok) {
+        throw new Error(`Server returned status ${res.status}`);
+      }
       const data = await res.json();
-      if (data.success) {
+      if (data.success && Array.isArray(data.profiles)) {
         setProfiles(data.profiles);
       } else {
         setError(data.error || 'Failed to load profiles');
