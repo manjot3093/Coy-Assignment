@@ -616,89 +616,105 @@
   ],
   "swipes": [
     {
-      "id": "83795ba5-a2c5-46be-ab17-88bc599541c8",
+      "id": "55987714-feb9-488b-acc1-1bd5475fd9d7",
       "userId": "current_user",
       "profileId": "coy_01",
-      "action": "pass",
-      "timestamp": "2026-11-18T18:35:54.787Z"
+      "action": "like",
+      "timestamp": "2026-11-18T19:01:11.934Z"
     },
     {
-      "id": "1bd10ed4-4dd2-4fe9-8d36-df3ef755a246",
+      "id": "f612064c-6f36-4a44-8711-a1d9592396a0",
       "userId": "current_user",
       "profileId": "coy_02",
       "action": "pass",
-      "timestamp": "2026-11-18T18:35:55.196Z"
+      "timestamp": "2026-11-18T19:01:16.088Z"
     },
     {
-      "id": "d56d7090-f5e9-4b9a-b880-efaae2957dd5",
+      "id": "2a8cb560-e95b-4adc-98e2-ab694be62876",
       "userId": "current_user",
       "profileId": "coy_03",
-      "action": "pass",
-      "timestamp": "2026-11-18T18:35:56.039Z"
+      "action": "like",
+      "timestamp": "2026-11-18T19:01:17.351Z"
     },
     {
-      "id": "faaff493-5029-426c-a04c-6b9e2e52ed9e",
+      "id": "3d42935a-ebf5-4374-a8cb-44be8b4d1066",
       "userId": "current_user",
       "profileId": "coy_04",
-      "action": "pass",
-      "timestamp": "2026-11-18T18:35:56.963Z"
+      "action": "like",
+      "timestamp": "2026-11-18T19:01:18.109Z"
     },
     {
-      "id": "7e7f6809-be95-45dd-ad7e-a94b48482d89",
+      "id": "e3c77d34-57a3-4208-809a-3a09c3a6c600",
       "userId": "current_user",
       "profileId": "coy_05",
       "action": "like",
-      "timestamp": "2026-11-18T18:36:05.120Z"
+      "timestamp": "2026-11-18T19:01:18.750Z"
     },
     {
-      "id": "13c98e7b-8f50-4058-9590-ade881c8e8c3",
+      "id": "8f964213-056d-4403-85b8-b3117b7a015e",
       "userId": "current_user",
       "profileId": "coy_06",
-      "action": "pass",
-      "timestamp": "2026-11-18T18:36:09.076Z"
+      "action": "like",
+      "timestamp": "2026-11-18T19:01:20.154Z"
     },
     {
-      "id": "40c7a53f-dde5-4e24-9171-c2a677e3bf36",
+      "id": "0aaaca6a-be8c-476e-ab89-78f93a129e06",
       "userId": "current_user",
       "profileId": "coy_07",
-      "action": "pass",
-      "timestamp": "2026-11-18T18:36:09.891Z"
+      "action": "like",
+      "timestamp": "2026-11-18T19:01:21.026Z"
     },
     {
-      "id": "706d8624-01d4-4e63-8a39-86719097317f",
+      "id": "85d2b047-61fb-477f-bfa8-cb716710a145",
       "userId": "current_user",
       "profileId": "coy_08",
-      "action": "pass",
-      "timestamp": "2026-11-18T18:36:10.517Z"
+      "action": "like",
+      "timestamp": "2026-11-18T19:01:21.628Z"
     },
     {
-      "id": "6212945a-beca-444f-a386-907325d109f1",
+      "id": "f5b93757-16b2-46b6-9801-25091015d7c7",
       "userId": "current_user",
       "profileId": "coy_09",
-      "action": "pass",
-      "timestamp": "2026-11-18T18:36:11.177Z"
+      "action": "like",
+      "timestamp": "2026-11-18T19:01:22.345Z"
     },
     {
-      "id": "d79173df-a02e-408f-ad24-aaaf97f122a9",
+      "id": "301241fd-7d55-4989-bbd5-34ca7c0f65fb",
       "userId": "current_user",
       "profileId": "coy_10",
       "action": "pass",
-      "timestamp": "2026-11-18T18:36:14.791Z"
-    },
-    {
-      "id": "35b3c9b3-7010-4fdb-998f-505dbbc1f260",
-      "userId": "current_user",
-      "profileId": "coy_11",
-      "action": "pass",
-      "timestamp": "2026-11-18T18:36:15.547Z"
+      "timestamp": "2026-11-18T19:01:23.556Z"
     }
   ],
   "matches": [
     {
-      "id": "d488d5eb-a205-4e36-89b8-6d0bf10ededb",
+      "id": "99cf58ce-5a1f-4ad4-b235-82f4a7eefe71",
+      "userId": "current_user",
+      "profileId": "coy_08",
+      "matchedAt": "2026-11-18T19:01:21.629Z",
+      "profile": {
+        "id": "coy_08",
+        "name": "Ananya Deshmukh",
+        "age": 20,
+        "photo": "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=800&q=80",
+        "bio": "Cognitive science nerd. If you can beat me at Catan or chess, the next bubble tea is on me.",
+        "collegeOrCity": "Ashoka University / Sonipat",
+        "interests": [
+          "Chess",
+          "Board Games",
+          "Cognitive Science",
+          "Boba Tea"
+        ],
+        "occupation": "Psychology & Neuro Student",
+        "distance": "15 km away",
+        "verified": true
+      }
+    },
+    {
+      "id": "67324126-d75f-451d-b3b7-fac196641c34",
       "userId": "current_user",
       "profileId": "coy_05",
-      "matchedAt": "2026-11-18T18:36:05.120Z",
+      "matchedAt": "2026-11-18T19:01:18.750Z",
       "profile": {
         "id": "coy_05",
         "name": "Meera Kapoor",
