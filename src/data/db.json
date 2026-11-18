@@ -1,0 +1,528 @@
+{
+  "profiles": [
+    {
+      "id": "coy_01",
+      "name": "Aanya Sharma",
+      "age": 21,
+      "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+      "bio": "Obsessed with specialty coffee, architectural history, and film cameras. Probably reading Murakami at a quiet café.",
+      "collegeOrCity": "Delhi University, North Campus",
+      "interests": [
+        "Film Photography",
+        "Indie Rock",
+        "Specialty Coffee",
+        "Literature"
+      ],
+      "occupation": "Literature Major & Freelance Writer",
+      "distance": "3 km away"
+    },
+    {
+      "id": "coy_02",
+      "name": "Rhea Sen",
+      "age": 22,
+      "photo": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
+      "bio": "Building aesthetic web apps by day, playing indie folk chords by night. Tell me your favorite hidden food spot!",
+      "collegeOrCity": "IIT Delhi / South Ext.",
+      "interests": [
+        "Acoustic Guitar",
+        "Next.js",
+        "Baking",
+        "Thrifting"
+      ],
+      "occupation": "Design Engineer",
+      "distance": "5 km away"
+    },
+    {
+      "id": "coy_03",
+      "name": "Devika Rao",
+      "age": 23,
+      "photo": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
+      "bio": "Law school survivor. Passionate about civil liberties, vinyl records, and hiking in Himachal during monsoon.",
+      "collegeOrCity": "National Law University, Delhi",
+      "interests": [
+        "Debate",
+        "Hiking",
+        "Vinyl Records",
+        "Podcasts"
+      ],
+      "occupation": "Legal Analyst",
+      "distance": "7 km away"
+    },
+    {
+      "id": "coy_04",
+      "name": "Karan Malhotra",
+      "age": 22,
+      "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80",
+      "bio": "Formula 1 nerd (Ferrari heartbreak), weekend marathon runner, and amateur sourdough baker.",
+      "collegeOrCity": "BITS Pilani / Gurgaon",
+      "interests": [
+        "Formula 1",
+        "Running",
+        "Sourdough",
+        "Sci-Fi"
+      ],
+      "occupation": "Fintech Analyst",
+      "distance": "12 km away"
+    },
+    {
+      "id": "coy_05",
+      "name": "Meera Kapoor",
+      "age": 21,
+      "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80",
+      "bio": "Aspiring documentary filmmaker. Let's debate A24 cinema and exchange Spotify playlists that feel like rainy evenings.",
+      "collegeOrCity": "Lady Shri Ram College",
+      "interests": [
+        "Cinematography",
+        "A24",
+        "Spotify Curating",
+        "Art Galleries"
+      ],
+      "occupation": "Film Studies Student",
+      "distance": "4 km away"
+    },
+    {
+      "id": "coy_06",
+      "name": "Aryan Singhal",
+      "age": 24,
+      "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80",
+      "bio": "Full-stack tinkerer who loves distributed systems, bouldering, and making terrible puns.",
+      "collegeOrCity": "Amity University / Noida",
+      "interests": [
+        "Bouldering",
+        "Open Source",
+        "Gaming",
+        "Craft Beer"
+      ],
+      "occupation": "Software Engineer",
+      "distance": "8 km away"
+    },
+    {
+      "id": "coy_07",
+      "name": "Tara Varma",
+      "age": 22,
+      "photo": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80",
+      "bio": "Classical Bharatanatyam dancer turned UI designer. Believer in warm lighting, good matcha, and deep late-night conversations.",
+      "collegeOrCity": "NIFT Delhi / Hauz Khas",
+      "interests": [
+        "Classical Dance",
+        "UI/UX",
+        "Matcha",
+        "Pottery"
+      ],
+      "occupation": "Product Designer",
+      "distance": "6 km away"
+    },
+    {
+      "id": "coy_08",
+      "name": "Ananya Deshmukh",
+      "age": 20,
+      "photo": "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=800&q=80",
+      "bio": "Cognitive science nerd. If you can beat me at Catan or chess, the next bubble tea is on me.",
+      "collegeOrCity": "Ashoka University / Sonipat",
+      "interests": [
+        "Chess",
+        "Board Games",
+        "Cognitive Science",
+        "Boba Tea"
+      ],
+      "occupation": "Psychology & Neuro Student",
+      "distance": "15 km away"
+    },
+    {
+      "id": "coy_09",
+      "name": "Kabir Mehta",
+      "age": 23,
+      "photo": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=800&q=80",
+      "bio": "Playing drums in a jazz fusion quartet. Collecting retro synth patches and looking for someone to jam with.",
+      "collegeOrCity": "St. Stephen's College",
+      "interests": [
+        "Jazz",
+        "Drums",
+        "Concerts",
+        "Street Food"
+      ],
+      "occupation": "Music Producer & Sound Designer",
+      "distance": "9 km away"
+    },
+    {
+      "id": "coy_10",
+      "name": "Sanya Nambiar",
+      "age": 22,
+      "photo": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=800&q=80",
+      "bio": "Marine conservation enthusiast. If I'm not in Delhi, I'm probably scuba diving somewhere in the Andamans.",
+      "collegeOrCity": "Miranda House",
+      "interests": [
+        "Scuba Diving",
+        "Environmentalism",
+        "Kayaking",
+        "Yoga"
+      ],
+      "occupation": "Sustainability Consultant",
+      "distance": "11 km away"
+    },
+    {
+      "id": "coy_11",
+      "name": "Rohan Chatterjee",
+      "age": 24,
+      "photo": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80",
+      "bio": "Culinary explorer. I make a killer slow-cooked pasta and obsess over vintage mechanical watches.",
+      "collegeOrCity": "St. Xavier's / Mumbai",
+      "interests": [
+        "Cooking",
+        "Horology",
+        "Italian Food",
+        "Travel"
+      ],
+      "occupation": "Brand Strategist",
+      "distance": "14 km away"
+    },
+    {
+      "id": "coy_12",
+      "name": "Dia Banerjee",
+      "age": 21,
+      "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80",
+      "bio": "Astrophysics student who gets overly excited explaining black holes. Also a sucker for good cheesecake.",
+      "collegeOrCity": "IISc / Bangalore",
+      "interests": [
+        "Astrophysics",
+        "Stargazing",
+        "Baking",
+        "Sci-Fi Movies"
+      ],
+      "occupation": "Physics Researcher",
+      "distance": "10 km away"
+    },
+    {
+      "id": "coy_13",
+      "name": "Nikhil Joshi",
+      "age": 23,
+      "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=800&q=80",
+      "bio": "Product guy who loves simple systems, minimalism, and long bicycle rides along tree-lined boulevards.",
+      "collegeOrCity": "DTU Delhi",
+      "interests": [
+        "Cycling",
+        "Minimalism",
+        "Tech Products",
+        "Design"
+      ],
+      "occupation": "Associate PM",
+      "distance": "13 km away"
+    },
+    {
+      "id": "coy_14",
+      "name": "Pooja Hegde",
+      "age": 22,
+      "photo": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=800&q=80",
+      "bio": "Illustrator and plant mom with 24 houseplants. Big fan of Studio Ghibli soundtracks and cozy monsoon evenings.",
+      "collegeOrCity": "College of Art, Delhi",
+      "interests": [
+        "Illustration",
+        "Plants",
+        "Studio Ghibli",
+        "Watercolor"
+      ],
+      "occupation": "Visual Illustrator",
+      "distance": "5 km away"
+    },
+    {
+      "id": "coy_15",
+      "name": "Aditya Nair",
+      "age": 24,
+      "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+      "bio": "Passionate about high-intensity tennis matches, clean code, and cold brew experiments. Let's hit the court!",
+      "collegeOrCity": "Amity University / Noida",
+      "interests": [
+        "Tennis",
+        "Cold Brew",
+        "TypeScript",
+        "Podcasts"
+      ],
+      "occupation": "Frontend Engineer",
+      "distance": "7 km away"
+    },
+    {
+      "id": "coy_16",
+      "name": "Tanvi Saxena",
+      "age": 21,
+      "photo": "https://images.unsplash.com/photo-1526080652727-5b77f74eacd2?auto=format&fit=crop&w=800&q=80",
+      "bio": "Writing essays on urban planning and nostalgia. Love finding secret rooftop terraces and listening to shoegaze.",
+      "collegeOrCity": "Shiv Nadar University",
+      "interests": [
+        "Urban Design",
+        "Shoegaze",
+        "Rooftops",
+        "Creative Writing"
+      ],
+      "occupation": "Urban Design Researcher",
+      "distance": "18 km away"
+    },
+    {
+      "id": "coy_17",
+      "name": "Vikramaditya Roy",
+      "age": 25,
+      "photo": "https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?auto=format&fit=crop&w=800&q=80",
+      "bio": "Architect designing sustainable eco-homes. Coffee snob, dog lover, and weekend road trip driver.",
+      "collegeOrCity": "SPA Delhi (School of Planning & Architecture)",
+      "interests": [
+        "Sustainable Architecture",
+        "Dogs",
+        "Road Trips",
+        "Coffee"
+      ],
+      "occupation": "Junior Architect",
+      "distance": "16 km away"
+    },
+    {
+      "id": "coy_18",
+      "name": "Isha Patel",
+      "age": 22,
+      "photo": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
+      "bio": "Data scientist working on climate models. Looking for someone to attend stand-up comedy shows and street food walks.",
+      "collegeOrCity": "IIT Bombay / Powai",
+      "interests": [
+        "Machine Learning",
+        "Stand-up Comedy",
+        "Food Crawls",
+        "Badminton"
+      ],
+      "occupation": "Data Scientist",
+      "distance": "6 km away"
+    },
+    {
+      "id": "coy_19",
+      "name": "Arjun Verma",
+      "age": 23,
+      "photo": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=800&q=80",
+      "bio": "Mechanical keyboard builder, retro gaming collector, and amateur barista. Let's talk about mechanical switches.",
+      "collegeOrCity": "Thapar University",
+      "interests": [
+        "Mechanical Keyboards",
+        "Retro Gaming",
+        "Espresso",
+        "Anime"
+      ],
+      "occupation": "Hardware Specialist",
+      "distance": "9 km away"
+    },
+    {
+      "id": "coy_20",
+      "name": "Kavya Menon",
+      "age": 20,
+      "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+      "bio": "Debater, history nerd, and museum hopper. You can win my heart by taking me to an antique bookstore.",
+      "collegeOrCity": "St. Stephen's College",
+      "interests": [
+        "Antique Books",
+        "Museums",
+        "History",
+        "Tea"
+      ],
+      "occupation": "History Honors Student",
+      "distance": "4 km away"
+    },
+    {
+      "id": "coy_21",
+      "name": "Samarth Goel",
+      "age": 24,
+      "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80",
+      "bio": "Building consumer social products. Loves indie hacker podcasts, cold showers, and rock climbing.",
+      "collegeOrCity": "IIIT Hyderabad",
+      "interests": [
+        "Startups",
+        "Rock Climbing",
+        "Podcasts",
+        "Cryptic Crosswords"
+      ],
+      "occupation": "Founder & Developer",
+      "distance": "11 km away"
+    },
+    {
+      "id": "coy_22",
+      "name": "Zoya Akhtar",
+      "age": 23,
+      "photo": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
+      "bio": "Fashion merchandiser with an eye for sustainable vintage wear. Always humming French pop.",
+      "collegeOrCity": "Pearl Academy, Delhi",
+      "interests": [
+        "Vintage Fashion",
+        "French Pop",
+        "Thrifting",
+        "Photography"
+      ],
+      "occupation": "Fashion Merchandiser",
+      "distance": "8 km away"
+    },
+    {
+      "id": "coy_23",
+      "name": "Rishabh Gill",
+      "age": 22,
+      "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80",
+      "bio": "Cricket enthusiast, dog dad to a golden retriever, and obsessed with making restaurant-quality butter chicken.",
+      "collegeOrCity": "Panjab University, Chandigarh",
+      "interests": [
+        "Cricket",
+        "Golden Retrievers",
+        "Cooking",
+        "Live Gigs"
+      ],
+      "occupation": "Business Development",
+      "distance": "14 km away"
+    },
+    {
+      "id": "coy_24",
+      "name": "Natasha Kulkarni",
+      "age": 21,
+      "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80",
+      "bio": "Passionate about typography, ceramic pottery, and 80s synthwave. Looking for a museum date partner.",
+      "collegeOrCity": "Symbiosis Pune",
+      "interests": [
+        "Pottery",
+        "Typography",
+        "Synthwave",
+        "Modern Art"
+      ],
+      "occupation": "Graphic Designer",
+      "distance": "10 km away"
+    },
+    {
+      "id": "coy_25",
+      "name": "Dhruv Chawla",
+      "age": 24,
+      "photo": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80",
+      "bio": "Venture scout and angel investor in early healthtech. When offline, I'm swimming laps or cooking spicy ramen.",
+      "collegeOrCity": "SRCC Delhi",
+      "interests": [
+        "Healthtech",
+        "Swimming",
+        "Japanese Cuisine",
+        "Reading"
+      ],
+      "occupation": "Venture Associate",
+      "distance": "12 km away"
+    },
+    {
+      "id": "coy_26",
+      "name": "Avani Reddy",
+      "age": 22,
+      "photo": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80",
+      "bio": "Classical vocalist, podcast producer, and avid collector of funky socks. Teach me something you know deeply.",
+      "collegeOrCity": "Loyola College / Chennai",
+      "interests": [
+        "Carnatic Music",
+        "Podcasting",
+        "Flea Markets",
+        "Filter Coffee"
+      ],
+      "occupation": "Content Producer",
+      "distance": "7 km away"
+    },
+    {
+      "id": "coy_27",
+      "name": "Yashvardhan Jain",
+      "age": 23,
+      "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=800&q=80",
+      "bio": "Fintech builder who loves poker theory, behavioral economics, and late-night highway drives.",
+      "collegeOrCity": "IIT Kanpur",
+      "interests": [
+        "Poker",
+        "Behavioral Economics",
+        "Late Drives",
+        "Chess"
+      ],
+      "occupation": "Quant Analyst",
+      "distance": "15 km away"
+    },
+    {
+      "id": "coy_28",
+      "name": "Sneha Nair",
+      "age": 21,
+      "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80",
+      "bio": "Neuroscience researcher fascinated by sleep cycles. I make playlists for every mood and love botanical gardens.",
+      "collegeOrCity": "Christ University, Bangalore",
+      "interests": [
+        "Neuroscience",
+        "Botanical Gardens",
+        "Playlists",
+        "Baking"
+      ],
+      "occupation": "Research Assistant",
+      "distance": "6 km away"
+    },
+    {
+      "id": "coy_29",
+      "name": "Prateek Singla",
+      "age": 23,
+      "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+      "bio": "Stand-up comedy buff, dog fosterer, and sourdough apprentice. If you love dogs, we will definitely get along.",
+      "collegeOrCity": "Amity University Jharkhand",
+      "interests": [
+        "Dogs",
+        "Stand-up Comedy",
+        "Sourdough",
+        "Indie Music"
+      ],
+      "occupation": "Software Engineer",
+      "distance": "3 km away"
+    },
+    {
+      "id": "coy_30",
+      "name": "Mihika Ghosh",
+      "age": 22,
+      "photo": "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=800&q=80",
+      "bio": "Documenting street art across Indian cities. Vinyl collector, Chai pe Charcha lover, and avid cinema fan.",
+      "collegeOrCity": "Jadavpur University, Kolkata",
+      "interests": [
+        "Street Art",
+        "Cinema",
+        "Vinyl Records",
+        "Street Photography"
+      ],
+      "occupation": "Cultural Journalist",
+      "distance": "9 km away"
+    },
+    {
+      "id": "coy_31",
+      "name": "Varun Bajaj",
+      "age": 24,
+      "photo": "https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?auto=format&fit=crop&w=800&q=80",
+      "bio": "Triathlete in training. Passionate about nutrition, clean code architecture, and weekend sunrise cycling.",
+      "collegeOrCity": "IIT Roorkee",
+      "interests": [
+        "Triathlon",
+        "Cycling",
+        "System Architecture",
+        "Nutrition"
+      ],
+      "occupation": "Backend Architect",
+      "distance": "14 km away"
+    },
+    {
+      "id": "coy_32",
+      "name": "Pari Tandon",
+      "age": 20,
+      "photo": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=800&q=80",
+      "bio": "Economics student who loves thrift shopping, Korean drama marathons, and finding quiet rooftop sunset spots.",
+      "collegeOrCity": "LSR / South Delhi",
+      "interests": [
+        "Thrifting",
+        "K-Dramas",
+        "Sunsets",
+        "Economics"
+      ],
+      "occupation": "Economics Major",
+      "distance": "5 km away"
+    }
+  ],
+  "preLikedProfileIds": [
+    "coy_02",
+    "coy_05",
+    "coy_08",
+    "coy_12",
+    "coy_15",
+    "coy_18",
+    "coy_23",
+    "coy_28"
+  ],
+  "swipes": [],
+  "matches": []
+}
