@@ -691,9 +691,60 @@
       "profileId": "coy_11",
       "action": "pass",
       "timestamp": "2026-11-18T19:05:55.281Z"
+    },
+    {
+      "id": "36ba39fc-3790-42a3-a80a-775b26f145d2",
+      "userId": "current_user",
+      "profileId": "coy_12",
+      "action": "pass",
+      "timestamp": "2026-11-19T06:52:39.971Z"
+    },
+    {
+      "id": "b3b5ed95-118e-422c-a4be-c67dfd1e5888",
+      "userId": "current_user",
+      "profileId": "coy_13",
+      "action": "like",
+      "timestamp": "2026-11-19T06:52:40.245Z"
+    },
+    {
+      "id": "2e01785a-3daf-43a9-aebe-94e1f1427ceb",
+      "userId": "current_user",
+      "profileId": "coy_14",
+      "action": "pass",
+      "timestamp": "2026-11-19T06:52:52.165Z"
+    },
+    {
+      "id": "87032e1e-2ab8-43a6-a06b-efc9e3def32a",
+      "userId": "current_user",
+      "profileId": "coy_15",
+      "action": "like",
+      "timestamp": "2026-11-19T06:52:53.291Z"
     }
   ],
   "matches": [
+    {
+      "id": "15a9d9d2-8c37-416a-a98a-340d882842e1",
+      "userId": "current_user",
+      "profileId": "coy_15",
+      "matchedAt": "2026-11-19T06:52:53.291Z",
+      "profile": {
+        "id": "coy_15",
+        "name": "Aditya Nair",
+        "age": 24,
+        "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+        "bio": "Passionate about high-intensity tennis matches, clean code, and cold brew experiments. Let's hit the court!",
+        "collegeOrCity": "Amity University / Noida",
+        "interests": [
+          "Tennis",
+          "Cold Brew",
+          "TypeScript",
+          "Podcasts"
+        ],
+        "occupation": "Frontend Engineer",
+        "distance": "7 km away",
+        "verified": true
+      }
+    },
     {
       "id": "99cf58ce-5a1f-4ad4-b235-82f4a7eefe71",
       "userId": "current_user",

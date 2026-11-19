@@ -41,11 +41,51 @@ export interface MatchRecord {
   unread?: boolean;
 }
 
+export type RelationshipTag =
+  | 'college'
+  | 'mutual_friends'
+  | 'event'
+  | 'work'
+  | 'contacts';
+
+export interface RelationshipTagInfo {
+  id: RelationshipTag;
+  label: string;
+  icon: string;
+  previewText: string;
+}
+
+export type CrushStatus = 'waiting' | 'expired' | 'reclaimed' | 'matched';
+
+export interface CrushRecord {
+  id: string;
+  userId: string;
+  name: string;
+  contact: string; // phone or email (e.g. +91 91289 •••••)
+  tag: RelationshipTag;
+  tagLabel: string;
+  tagIcon: string;
+  status: CrushStatus;
+  createdAt: string;
+  daysActive: number; // 0 to 45
+  cooldownDays: number; // 45
+}
+
 export interface DatabaseSchema {
   profiles: Profile[];
   preLikedProfileIds: string[];
   swipes: SwipeRecord[];
   matches: MatchRecord[];
+  crushes: CrushRecord[];
+}
+
+export interface CrushesResponse {
+  success: boolean;
+  crushes: CrushRecord[];
+  maxSlots: number;
+  usedSlots: number;
+  availableSlots: number;
+  message?: string;
 }
 
 export interface SwipeResponse {
