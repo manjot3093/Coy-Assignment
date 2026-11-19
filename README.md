@@ -2,7 +2,8 @@
 
 A mobile-first, high-performance web application featuring a Tinder/Bumble-style **"Discover"** swipe deck built alongside a placeholder "Home" tab and a real-time "Matches" view. Built for the **Coy SDE Intern Assignment**.
 
-Live Demo / Architecture Preview: Built with **Next.js 14 (App Router)**, **TypeScript**, **Tailwind CSS**, **Framer Motion**, and a persistent double-blind matching backend engine.
+- **Live Production URL**: [https://coy-discover-iyls.netlify.app](https://coy-discover-iyls.netlify.app)
+- **Tech Stack**: Next.js 14 (App Router), TypeScript, Tailwind CSS, Framer Motion, Netlify Serverless API Routes.
 
 ---
 
