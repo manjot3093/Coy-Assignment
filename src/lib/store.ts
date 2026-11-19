@@ -1,55 +1,81 @@
 import fs from 'fs';
 import path from 'path';
+import os from 'os';
 import { randomUUID } from 'crypto';
 import { DatabaseSchema, MatchRecord, Profile, SwipeAction, SwipeRecord } from './types';
 import { SEED_PROFILES, PRE_LIKED_PROFILE_IDS } from '../data/seedProfiles';
 
-const DB_DIR = path.join(process.cwd(), 'src', 'data');
-const DB_FILE = path.join(DB_DIR, 'db.json');
+// In serverless environments (Netlify, AWS Lambda, Vercel), only /tmp is writable.
+const isServerless =
+  Boolean(process.env.NETLIFY) ||
+  Boolean(process.env.AWS_LAMBDA_FUNCTION_NAME) ||
+  Boolean(process.env.VERCEL) ||
+  process.env.NODE_ENV === 'production';
 
-// Ensure db directory and initial database file exists
+const DB_DIR = isServerless ? os.tmpdir() : path.join(process.cwd(), 'src', 'data');
+const DB_FILE = path.join(DB_DIR, 'coy_db.json');
+
+// In-memory fallback ensuring zero-crash resilience
+let memoryDb: DatabaseSchema | null = null;
+
+function getFreshData(): DatabaseSchema {
+  return {
+    profiles: SEED_PROFILES,
+    preLikedProfileIds: PRE_LIKED_PROFILE_IDS,
+    swipes: [],
+    matches: [],
+  };
+}
+
+// Ensure database exists and is valid
 function ensureDb(): DatabaseSchema {
-  if (!fs.existsSync(DB_DIR)) {
-    fs.mkdirSync(DB_DIR, { recursive: true });
-  }
-
-  if (!fs.existsSync(DB_FILE)) {
-    const initialData: DatabaseSchema = {
-      profiles: SEED_PROFILES,
-      preLikedProfileIds: PRE_LIKED_PROFILE_IDS,
-      swipes: [],
-      matches: [],
-    };
-    fs.writeFileSync(DB_FILE, JSON.stringify(initialData, null, 2), 'utf-8');
-    return initialData;
+  if (memoryDb) {
+    return memoryDb;
   }
 
   try {
-    const raw = fs.readFileSync(DB_FILE, 'utf-8');
-    const parsed = JSON.parse(raw) as DatabaseSchema;
-    if (!parsed.profiles || !Array.isArray(parsed.profiles)) {
-      throw new Error('Invalid DB structure');
+    if (!fs.existsSync(DB_DIR)) {
+      fs.mkdirSync(DB_DIR, { recursive: true });
     }
-    return parsed;
-  } catch {
-    // If corrupt, reinitialize
-    const fallback: DatabaseSchema = {
-      profiles: SEED_PROFILES,
-      preLikedProfileIds: PRE_LIKED_PROFILE_IDS,
-      swipes: [],
-      matches: [],
-    };
-    fs.writeFileSync(DB_FILE, JSON.stringify(fallback, null, 2), 'utf-8');
-    return fallback;
+
+    if (fs.existsSync(DB_FILE)) {
+      const raw = fs.readFileSync(DB_FILE, 'utf-8');
+      const parsed = JSON.parse(raw) as DatabaseSchema;
+      if (parsed.profiles && Array.isArray(parsed.profiles)) {
+        memoryDb = parsed;
+        return parsed;
+      }
+    }
+  } catch (err) {
+    console.warn('Could not read persistent DB file, using fallback:', err);
   }
+
+  const initialData = getFreshData();
+  memoryDb = initialData;
+
+  try {
+    fs.writeFileSync(DB_FILE, JSON.stringify(initialData, null, 2), 'utf-8');
+  } catch (err) {
+    console.warn('Could not write initial DB file, continuing in-memory:', err);
+  }
+
+  return initialData;
 }
 
 function saveDb(data: DatabaseSchema): void {
-  ensureDb();
-  // Write to temporary file first for atomic persistence
-  const tempFile = `${DB_FILE}.tmp.${Date.now()}`;
-  fs.writeFileSync(tempFile, JSON.stringify(data, null, 2), 'utf-8');
-  fs.renameSync(tempFile, DB_FILE);
+  memoryDb = data;
+
+  try {
+    if (!fs.existsSync(DB_DIR)) {
+      fs.mkdirSync(DB_DIR, { recursive: true });
+    }
+    const tempFile = `${DB_FILE}.tmp.${Date.now()}`;
+    fs.writeFileSync(tempFile, JSON.stringify(data, null, 2), 'utf-8');
+    fs.renameSync(tempFile, DB_FILE);
+  } catch (err) {
+    // If filesystem is restricted in serverless, memoryDb maintains state safely
+    console.warn('Filesystem write failed, using in-memory store:', err);
+  }
 }
 
 /**
@@ -62,14 +88,12 @@ export function getFeed(userId: string = 'current_user'): Profile[] {
     db.swipes.filter((s) => s.userId === userId).map((s) => s.profileId)
   );
 
-  // Return unswiped profiles
   return db.profiles.filter((p) => !swipedProfileIds.has(p.id));
 }
 
 /**
  * Record a swipe (like or pass).
- * Determines if a mutual match occurs in strict double-blind fashion:
- * only matches if action === 'like' AND the other profile is in preLikedProfileIds.
+ * Determines mutual match strictly server-side.
  */
 export function recordSwipe(
   userId: string = 'current_user',
@@ -78,13 +102,11 @@ export function recordSwipe(
 ): { match: boolean; matchedProfile?: Profile } {
   const db = ensureDb();
 
-  // Find profile
   const profile = db.profiles.find((p) => p.id === profileId);
   if (!profile) {
     throw new Error(`Profile with id "${profileId}" not found.`);
   }
 
-  // Check if already swiped
   const existingSwipeIndex = db.swipes.findIndex(
     (s) => s.userId === userId && s.profileId === profileId
   );
@@ -103,10 +125,7 @@ export function recordSwipe(
     db.swipes.push(swipeRecord);
   }
 
-  // Check for mutual match
-  const isMutual =
-    action === 'like' && db.preLikedProfileIds.includes(profileId);
-
+  const isMutual = action === 'like' && db.preLikedProfileIds.includes(profileId);
   let matchedProfile: Profile | undefined = undefined;
 
   if (isMutual) {
@@ -123,7 +142,7 @@ export function recordSwipe(
         matchedAt: new Date().toISOString(),
         profile,
       };
-      db.matches.unshift(matchRecord); // newest first
+      db.matches.unshift(matchRecord);
     }
   }
 
@@ -136,7 +155,7 @@ export function recordSwipe(
 }
 
 /**
- * Get all mutual matches for the current user.
+ * Get all mutual matches for current user.
  */
 export function getMatches(userId: string = 'current_user'): MatchRecord[] {
   const db = ensureDb();
@@ -147,11 +166,6 @@ export function getMatches(userId: string = 'current_user'): MatchRecord[] {
  * Reset database to fresh state with all 32 seed profiles.
  */
 export function resetDatabase(): void {
-  const freshData: DatabaseSchema = {
-    profiles: SEED_PROFILES,
-    preLikedProfileIds: PRE_LIKED_PROFILE_IDS,
-    swipes: [],
-    matches: [],
-  };
+  const freshData = getFreshData();
   saveDb(freshData);
 }
