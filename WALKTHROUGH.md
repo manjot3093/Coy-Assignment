@@ -13,7 +13,7 @@ We have completed the entire **Coy SDE Intern Assignment**, covering both the st
 | **WhatsApp Number** | `+91 8825313581` |
 | **Graduation Year** | `2027` (Amity University Jharkhand, B.Tech CSE) |
 | **Live Deployed App (Netlify)** | **https://coy-discover-iyls.netlify.app** |
-| **Part B GitHub Repository** | `https://github.com/manjot3093/coy-discover-tab` |
+| **Part B GitHub Repository** | `https://github.com/manjot3093/Coy-Assignment` |
 | **Resume File (PDF)** | Staged at `c:\Docs\COY ASSIGNMNET\resume.pdf` (59.6 KB, valid PDF, under 10 MB limit) |
 
 ---
